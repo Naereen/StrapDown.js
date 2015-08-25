@@ -1,0 +1,263 @@
+#!/usr/bin/env bash
+# By: Lilian BESSON
+# Email: Lilian.BESSON[AT]ens-cachan[DOT]fr
+# Date: 23-11-2014
+# Web: http://besson.qc.to/bin/strapdown2pdf
+# Web2: http://lbesson.bitbucket.org/strapdown2pdf.html
+#
+# strapdown2pdf, a small script to simply convert a "StrapDown.js flavored"
+# HTML file (used to write with a Markdown syntax) to a PDF document.
+#
+# More details on http://lbesson.bitbucket.org/strapdown2pdf.html
+#
+# Requirements:
+#  + [lunamark](http://jgm.github.io/lunamark/lunamark.1.html)
+#  + [autotex](http://besson.qc.to/bin/autotex) (from my webpage),
+#  + [PDFCompress](http://besson.qc.to/bin/PDFCompress) (from my webpage),
+#  + [pdflatex](http://besson.qc.to/bin/pdflatex) (from my webpage).
+#
+# References and more details:
+#  + [StrapDown.js](http://lbesson.bitbucket.org/md/)
+#
+# Licence: [GPLv3](http://besson.qc.to/LICENCE.html)
+#
+# Bugs / FIXME:
+#  1. I think it is way better now. Hack something to preserve LaTeX code verbatim between $ $ in the HTML initial document
+#     Example: http://javis/a/maths.html -> http://javis/a/maths.pdf works very well,
+#     only for MathJax flavored maths formulas, which are all copied in the .tex with escaped $ and { : \{ and \$ every where :(
+#
+#
+version='0.8'
+AUTOTEX="autotex batchmode"
+
+quiet="false"
+sign="false"
+keep="false"
+discrete="false"
+htm="false"
+
+scale="0.85"
+policesize="11"
+
+# $OPTARG can contain the argument of the option k (if specified with hvk: or hk:v for example)
+# while getopts vhqkmdsi option; do
+# FIXME: options with a for loop are better handled that getopts ? .. OK
+# 	 case $option in
+for arg in "$@"; do
+	case "$arg" in
+ 	 	-v|-version|--version)
+			echo -e "strapdown2pdf $version"
+			exit 0
+			;;
+		-h|-help|--help)
+			echo -e "${green}strapdown2pdf${white} -help | [options]"
+			echo -e ""
+			echo -e "Print a StrapDown-powered web-page to a PDF document, using lunamark and autotex."
+			echo -e ""
+			echo -e "Help:"
+			echo -e "    ${yellow}-h${white}           to print this help message (and quit)."
+			echo -e "    ${yellow}-v${white}           to print just the version of strapdown2pdf (and quit)."
+			echo -e ""
+			echo -e "Options:"
+			echo -e "    ${yellow}-i|-interactive${white}	run PDFLaTeX with the interactive (errorstopmode) mode (default is batchmode)."
+			echo -e "    ${yellow}-q|-quiet${white}		run strapdown2pdf in quiet mode (no output at all, everything is redirected to ${magenta}/tmp/strapdown2pdf.log${white})."
+			echo -e "    ${yellow}-m|-htm${white}		run strapdown2pdf to produce a simple HTML file (which do not use StrapDown.js), written to a .htm file.\n\t\t\t For important document, producing a .htm autonomous file is a good idea."
+			echo -e "    ${yellow}-d|-discrete${white}	run strapdown2pdf is discrete mode, without adding any creditentials in the produced document."
+			echo -e "    ${yellow}-s[0-9][0-9]*%${white}	change the default scale used by autotex (default is 85%, '-70%', '-75%' or '-80%' are good also) ${cyan}"'New!'
+			echo -e "    ${yellow}-[0-9][0-9]*pt${white}	change the default police size used by autotex (default is 11pt, '-10pt' or '-12pt' are good also) ${cyan}"'New!'
+			echo -e "    ${yellow}-k|-keep${white}		keep the intermediate .tex file. ${cyan}"'New!'
+			echo -e "    ${yellow}-s|-sign${white}		sign the produce PDF document with GnuPG (thanks to PDFCompress)."
+			echo -e ""
+			echo -e "strapdown2pdf v$version : Copyrights: (c) Lilian Besson 2011-2014."
+			echo -e "Released under the term of the GPL v3 Licence (more details on http://besson.qc.to/LICENSE.html)."
+			echo -e "In particular, strapdown2pdf is provided WITHOUT ANY WARANTY."
+			exit 0
+			;;
+		-q|-quiet|--quiet)
+			echo -e "${magenta}Running strapdown2pdf with option --quiet, to run silently.${white}"
+			quiet="true"
+			shift
+			;;
+		-k|-keep|--keep)
+			echo -e "${magenta}Running strapdown2pdf with option --keep, to keep the intermediate .tex file.${white}"
+			keep="true"
+			shift
+			;;
+		-m|-htm|--htm)
+			echo -e "${magenta}Running strapdown2pdf with option --htm, to produce a simple HTML file (which do not use StrapDown.js), written to a .htm file.${white}"
+			htm="true"
+			shift
+			;;
+		-d|-discrete|--discrete)
+			echo -e "${magenta}Using raw document without adding any ${u}strapdown2pdf${U} and ${u}StrapDown${U}.js creditentials.${white}"
+			discrete="true"
+			shift
+			;;
+		-s|-sign|--sign)
+			echo -e "${magenta}Running strapdown2pdf with option --sign, to sign the produced PDF (useless..).${white}"
+			sign="true"
+			shift
+			;;
+		-s[0-9][0-9]*%)
+			scale="${arg//-s/}"
+			scale=0."${scale//%/}"
+			echo -e "${magenta}Running strapdown2pdf with option -s[0-9]*%, to choose the scale, which is now ${scale}.${white}"
+			shift
+			;;
+		-[0-9][0-9]*pt)
+			policesize="${arg//-/}"
+			policesize="${policesize//pt/}"
+			echo -e "${magenta}Running strapdown2pdf with option -[0-9][0-9]*pt, to choose the police size, which is now ${policesize}.${white}"
+			shift
+			;;
+		-i|-interactive|--interactive)
+			echo -e "${magenta}Using PDFLaTeX with '-interaction=errorstopmode' option (the compilation will pause if a problem occur).${white}"
+			AUTOTEX="autotex errorstopmode"
+			shift
+			;;
+	 esac
+done
+
+StrapDown2PDF() {
+	input="$(basename "$1")"
+	name="${input%.html}"
+
+	# Be sure we have a nice HTML or Markdown file and not something else :)
+	if [ "${name}.html" != "${input}" ]; then
+		echo -e "${red}WARNING${white} The input file ${input} seems to not be a valid HTML file."
+		if [ "${input%.md}.md" != "${input}" ]; then
+			echo -e "${red}WARNING${white} The input file ${input} seems to not be a Markdown either."
+			echo -e "${red}I prefer to quit NOW.${white}"
+			exit 5
+		else
+			echo -e "${green}COOL${white} The input file ${input} seems to be a valid MarkDown file : ${blue}good :)${white}."
+			name="${input%.md}"
+		fi
+	else
+		echo -e "${green}COOL${white} The input file ${input} seems to be a valid MarkDown file or StrapDown-powered HTML file : ${blue}good :)${white}."
+	fi
+	# To be even more paranoid, I could search the HTML file and be sure that StrapDown.js is indeed used, but pfiou I'm lazy.
+
+	p="$(pwd)"
+
+	echo -e "Working with $u$input$U on $blue$p${white}." | tee -a /tmp/strapdown2pdf.log
+
+	echo -e "${magenta}The following lines will be removed :${white}"
+	grep -n "^<" "$input"
+
+	# Remove HTML only lines (typically, the first one and the 4 last ones),
+	grep -v "^<" "$input" \
+		| sed s/'\\\\'/'\\\\\\\\'/g \
+		| sed s/'\\_'/'\\\\\\_'/g \
+		| sed s/'`_`'/'`\\\\_`'/g \
+		| sed s/'`\\`'/'`\\\\`'/g \
+		| sed s/'`\\\\`'/'`\\\\\\\\`'/g \
+		| sed s/'`\$`'/'`\\\\$`'/g \
+		| sed s/'`\$\$`'/'`\\\\$$`'/g \
+		| sed s/'`\*`'/'`\\*`'/g \
+		| sed s/'`\*\*`'/'`\\*\\*`'/g \
+		> /tmp/"${name}".md
+	# Now we have a pure Markdown file (at least we hope)
+
+	title="$(grep -o -m 1 "<title>[^<]*</title>" "${input}" | grep -o ">.*<" | sed s/">"/""/ | sed s/"<"/""/)"
+	echo -e "${cyan}I found this as a possible title${white} : $u${title}$U." | tee -a /tmp/strapdown2pdf.log
+
+	if [ X"${htm}" = "Xtrue" ]; then
+			echo -e "<!DOCTYPE html><html><head><meta charset=\"utf-8\"/><title>${title}</title></head>\n<body>" > "${name}".htm
+			python -m markdown -e utf8 -v /tmp/"${name}".md >> "${name}".htm
+			echo -e "</body>\n</html>\n" >> "${name}".htm
+			echo -e "${cyan}I am done producing ${name}.htm in the current repertory."
+			exit 0
+	fi
+
+	# Convert md -> tex with lunamark (in /tmp/, as always)
+	lunamark -Xhash_enumerators -t latex -o "${name}".tex~ /tmp/"${name}".md || exit 21
+
+	# Because we are proud of this script
+	echo -e "%% -*- coding:utf8; mode:latex -*-\n%% LaTeX file automatically generated with [strapdown2pdf](https://bitbucket.org/lbesson/bin/src/master/strapdown2pdf)" > "${name}".tex
+	echo -e "%% from ${p}/${input}, the $(date)." >> "${name}".tex
+
+	# Adding two autotex specials comments,
+	# One for the title
+	echo -e "%autotex% Titre: ${title}" >> "${name}".tex
+	# And one for the scale
+	echo -e "%autotex% Scale: ${scale}" >> "${name}".tex
+	# And one for the police size
+	echo -e "%autotex% PoliceSize: ${policesize}" >> "${name}".tex
+
+	# We add the .tex file (it does NOT have any LaTeX headers)
+	# Apparently, I have been able to remove all weird espaced math LaTeX code in the input file ...
+
+	# FIXME: here we should also try to improve the LaTeX math code preservation
+	cat "${name}".tex~ \
+		| sed s/'\\\$'/$/g \
+		| sed s/'\\^'/'^'/g \
+		| sed s/'\\char92{}'/'\\'/g \
+		| sed s/'\\char62{}'/'>'/g \
+		| sed s/'\\char60{}'/'<'/g \
+		| sed s/'\\char126{}'/'\~'/g \
+		| sed s/'\\{'/'{'/g \
+		| sed s/'\\}'/'}'/g \
+		| sed s/'\\_'/'_'/g \
+		| sed s/'\\_{'/'_{'/g \
+		| sed s/'\\_'/'_'/g \
+		| sed s/'\\emph'/''/g \
+		| sed 's/\\&/\&/g' \
+		| sed s/'\^{}'/'^'/g \
+		| sed s/'\"\([^"]*\)\"'/'« \1 »'/g \
+		| sed s/'\([A-Za-z]\)_\([A-Za-z]\)'/'\1\\_\2'/g \
+		| sed s_'\(\\href{http[^}]*}\){\([^} ]*\.[^} ]*\)}'_'\1{\\texttt{\2}}'_g \
+		| sed s/'\(\\[a-z]*section\){'/'\1*{'/g \
+		>> "${name}".tex || exit 16
+		# FIXME Add '\([^}]*\)' between on the left and right on {\([^} ]*\.[^} ]*\)} after { and before } ?
+
+	# And a final line to say "Compiled from HTML/MarkDown with StrapDown.js to PDF with ..."
+	if [ "$discrete" != "true" ]; then
+		echo -e "\n\n\n\n%% Added with strapdown2pdf\n\\\\hspace{\\\\fill}\n\\\\vfill{}\n\n\\\\hspace{\\\\fill}\\\\rule{.6\\\\linewidth}{0.4pt}\\\\hspace{\\\\fill}\n\n\\\\begin{quote}\n\\\\begin{footnotesize}\n (Compiled to \\\\textbf{PDF} from a \\\\texttt{HTML/Markdown} file (powered by \\\\href{http://lbesson.bitbucket.org/md/}{\\\\texttt{StrapDown.js}}) with \\\\textbf{\\\\href{http://lbesson.bitbucket.org/md/strapdown2pdf.html}{strapdown2pdf}}, \\\\texttt{v${version}}.)\n\\\\end{footnotesize}\n\\\\end{quote}\n"  >> "${name}".tex
+	fi
+
+	# Compile in batchmode it with autotex, to automatically add headers and packages stuff
+	${AUTOTEX} "${name}".tex
+
+	# Compress it (and even gpg sign it !)
+	if [ "$sign" = "true" ]; then
+		PDFCompress --sign "${name}".pdf
+	else
+		PDFCompress "${name}".pdf
+	fi
+
+	# Clean up local repertory
+	mv -vf "${name}".tex* /tmp/
+	if [ "$keep" = "true" ]; then
+		cp -vf /tmp/"${name}".tex ./ && \
+		echo -e "${green} The intermediate LaTeX file ${name}.tex has been kept here, as asked by the option -k or --keep."
+	fi
+
+	# Proudly say that we are done
+	echo -e "${green}The file ${name}.pdf have been well generated from ${input}, and it should be really beautiful :)" | tee -a /tmp/strapdown2pdf.log
+	# read
+}
+
+log="/tmp/strapdown2pdf.log"
+# And finally treat every arguments.
+if [ "$quiet" = "true" ]; then
+	echo -e "On "$(date)", strapdown2pdf is running on quiet mode." > "${log}"
+	echo -e "On quiet mode, arguments were '$@'." &>> "${log}"
+	StrapDown2PDF "${1}" &>> "${log}"
+	shift
+	for finput in "$@"; do
+		echo -e "\n\n---------------------------" &>> "${log}"
+		echo -e "Generating the next file..." &>> "${log}"
+		StrapDown2PDF "${finput}" &>> "${log}"
+	done
+else
+	StrapDown2PDF "${1}"
+	shift
+	for finput in "$@"; do
+		echo -e "\n\n---------------------------"
+		echo -e "${blue}Generating the next file..."
+		StrapDown2PDF "${finput}"
+	done
+fi
+
+## END

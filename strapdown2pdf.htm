@@ -1,0 +1,125 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><title>StrapDown2PDF</title></head>
+<body>
+<blockquote>
+<h3>Please, before reading this page, be sure to know what <a href="http://lbesson.bitbucket.org/md/" title="Homepage of StrapDown.js !">StrapDown.js</a> is</h3>
+<p>Check out <a href="http://lbesson.bitbucket.org/md/index.html" title="Explanations on StrapDown.js !">index.html</a> if you don't know yet how cool <a href="http://lbesson.bitbucket.org/md/" title="Homepage of StrapDown.js !">StrapDown.js</a> is !</p>
+</blockquote>
+<hr />
+<h1>StrapDown2PDF</h1>
+<p><a href="http://lbesson.bitbucket.org/md/strapdown2pdf" title="A super cool Bash script !">StrapDown2PDF</a> is a <strong>super cool</strong> Bash script designed to print a <em>StrapDown</em>-powered web-page to a PDF document.</p>
+<h2>More details</h2>
+<p>To be more precise, <a href="http://lbesson.bitbucket.org/md/" title="Homepage of StrapDown.js !">StrapDown.js</a> allows you to write pretty HTML pages with the Markdown syntax (more details here <a href="http://lbesson.bitbucket.org/md/index.html" title="Explanations on StrapDown.js !">index.html</a>).</p>
+<p>And <a href="http://lbesson.bitbucket.org/md/strapdown2pdf" title="A super cool Bash script !">StrapDown2PDF</a> can be used (on your laptop, from the command line) to transform the document from HTML (writen with Markdown) to PDF (with one intermediate phasis as a LaTeX file).</p>
+<hr />
+<h2>Example and how-to</h2>
+<p><a href="strapdown2pdf.pdf">This page as a PDF</a> is a pretty good example of an automatically compiled PDF file.</p>
+<p><strong>Warning:</strong> this script is <em>still experimental</em>: the compilation is never perfect.
+It is advisable to use the <code>-keep</code> option, change a little bit the LaTeX file and then compile again.</p>
+<h3>How-to ?</h3>
+<p>You just have to use this command, in a terminal:</p>
+<blockquote>
+<p><code>bash
+$ strapdown2pdf MyWebPage.html        # This will produce "MyWebPage.pdf"</code></p>
+</blockquote>
+<h3>More than one file at a time ?</h3>
+<p><strong>strapdown2pdf</strong> even supports multi arguments.
+For instance, the following command will print to PDF every <a href="http://lbesson.bitbucket.org/md/" title="Homepage of StrapDown.js !">StrapDown.js</a>-flavored HTML file in the current directory:</p>
+<blockquote>
+<p><code>bash
+$ echo "Calling 'strapdown2pdf *.html' will produce a PDF for every .html document in the current directory."
+$ strapdown2pdf *.html</code></p>
+</blockquote>
+<hr />
+<h3>Even more details?</h3>
+<p><strong>strapdown2pdf</strong> comes with a basic help included ! Just ask with option <code>-h</code> (as always):</p>
+<blockquote>
+<p>```bash
+$ strapdown2pdf -h
+strapdown2pdf -help | [options]</p>
+<p>Print a StrapDown-powered web-page to a PDF document, using lunamark and autotex.</p>
+<p>Help:
+    -h           to print this help message (and quit).
+    -v           to print just the version of strapdown2pdf (and quit).</p>
+<p>Options:
+    -i|-interactive     run PDFLaTeX with the interactive (errorstopmode) mode (default is batchmode).
+    -q|-quiet           run strapdown2pdf in quiet mode (no output at all, everything is redirected to /tmp/strapdown2pdf.log).
+    -m|-htm             run strapdown2pdf to produce a simple HTML file (which do not use StrapDown.js), written to a .htm file.
+                         For important document, producing a .htm autonomous file is a good idea.
+    -d|-discrete        run strapdown2pdf is discrete mode, without adding any creditentials in the produced document.
+    -s[0-9][0-9]<em>%      change the default scale used by autotex (default is 85%, '-70%', '-75%' or '-80%' are good also) New!
+    -[0-9][0-9]</em>pt      change the default police size used by autotex (default is 11pt, '-10pt' or '-12pt' are good also) New!
+    -k|-keep            keep the intermediate .tex file. New!
+    -s|-sign            sign the produce PDF document with GnuPG (thanks to PDFCompress).</p>
+<p>strapdown2pdf v0.8 : Copyrights: (c) Lilian Besson 2011-2014.
+Released under the term of the GPL v3 Licence (more details on http://besson.qc.to/LICENSE.html).
+In particular, strapdown2pdf is provided WITHOUT ANY WARANTY.
+```</p>
+</blockquote>
+<h3>Options</h3>
+<p><strong>strapdown2pdf</strong> now comes with these options:</p>
+<ul>
+<li><code>-interactive</code> (shortcut is <code>-i</code>) to run <a href="http://besson.qc.to/bin/pdflatex">PDFLaTeX</a> with the interactive (errorstopmode) mode (default is batchmode),</li>
+<li><code>-quiet</code> (shortcut is <code>-q</code>) to run <a href="http://lbesson.bitbucket.org/md/strapdown2pdf.html">strapdown2pdf</a> in quiet mode (no output at all, everything is redirected to <code>/tmp/strapdown2pdf.log</code>),</li>
+<li><code>-htm</code> (shortcut is <code>-m</code>) to produce a simple HTML file (which do not use StrapDown.js, see <a href="./strapdown2pdf.htm">this example strapdown2pdf.htm</a>), written to a .htm file. For important document, producing a .htm autonomous file is a good idea,</li>
+<li><code>-discrete</code> (shortcut is <code>-d</code>) to run strapdown2pdf is discrete mode, without adding any creditentials in the produced document,</li>
+<li><code>-s[0-9][0-9]*%</code> (e.g. <code>-79%</code>) to change the default scale used by autotex (default is 85%, '-70%', '-75%' or '-80%' are good also),</li>
+<li><code>-[0-9][0-9]*pt</code> (e.g. <code>-10pt</code>) to change the default police size used by autotex (default is 11pt, '-10pt' or '-12pt' are good also),</li>
+<li><code>-keep</code> (shortcut is <code>-k</code>) to keep the intermediate <code>.tex</code> file,</li>
+<li><code>-sign</code> (shortcut is <code>-s</code>) to sign the produce PDF document with GnuPG (thanks to <a href="http://besson.qc.to/bin/PDFCompress">PDFCompress</a> option <code>--sign</code>).</li>
+</ul>
+<hr />
+<h2>Mandatory requirements</h2>
+<ul>
+<li><a href="http://jgm.github.io/lunamark/lunamark.1.html">lunamark</a> (an awesome <em>lua</em>-powered Markdown to LaTeX processor),</li>
+<li><a href="http://besson.qc.to/bin/autotex">autotex</a> (from my web page, or from <a href="https://bitbucket.org/lbesson/bin/src/master/autotex">bin/autotex</a>).</li>
+</ul>
+<h2>Optionnal requirements</h2>
+<p>These external scripts are not really mandatory, you could do without it by modifying a couple of lines of the script's code:</p>
+<ul>
+<li><a href="http://besson.qc.to/bin/PDFCompress">PDFCompress</a> (from my web page, or from <a href="https://bitbucket.org/lbesson/bin/src/master/PDFCompress">bin/PDFCompress</a>),</li>
+<li><a href="http://besson.qc.to/bin/pdflatex">pdflatex</a> (from my web page, or from <a href="https://bitbucket.org/lbesson/bin/src/master/pdflatex">bin/pdflatex</a>).</li>
+</ul>
+<hr />
+<h1>Future features ?</h1>
+<h3>A 100% perfect support for embeded LaTeX code</h3>
+<p>These two examples (<a href="example3.html">3</a> and <a href="example4.html">4</a>) show how to include <a href="http://www.mathjax.org/">MathJax</a>
+in a <em>StrapDown</em>-flavored HTML page to simply embed some <em>LaTeX</em> equations.</p>
+<blockquote>
+<p>Apparently, now <em>strapdown2pdf</em> have a better support for any (not too complicated) $\LaTeX{}$ code embedded in the <em>Markdown</em> source.
+Any feedback is welcome, and I will continue to improve this feature.</p>
+</blockquote>
+<h3>Some examples of a good PDF printed version of a StrapDown.js powered page</h3>
+<blockquote>
+<p>These are from September, October and November 2014.</p>
+</blockquote>
+<ul>
+<li><a href="http://perso.crans.org/besson/publis/10_10_2014__Liberation.en.html">This (English) translation of a French press article</a> about <a href="http://www.mahindraecolecentrale.edu.in/discover.html">Mahindra École Centrale</a>, nicely printed to <a href="http://perso.crans.org/besson/publis/10_10_2014__Liberation.en.pdf">this PDF</a>,</li>
+<li><a href="http://perso.crans.org/besson/publis/29_10_2014__LeMonde.en.html">This (English) translation of another French press article</a> about the future <a href="http://www.centrale-casablanca.ma/site/home.html">École Centrale Casablanca</a>, nicely printed to <a href="http://perso.crans.org/besson/publis/29_10_2014__LeMonde.en.pdf">a PDF, quickly modified by hand to include an image</a>,</li>
+<li><a href="http://perso.crans.org/besson/publis/PDE_09_2014/index.html">This small (French) research report</a> on a <a href="https://en.wikipedia.org/wiki/Partial_differential_equations">non-linear Partial Differential Equation</a>, nicely printed to <a href="http://perso.crans.org/besson/publis/PDE_09_2014/index.pdf">a PDF, with very good support of LaTeX</a> (<a href="https://bitbucket.org/lbesson/bin/diff/strapdown2pdf?diff2=20fd4babc524&amp;at=master">since this modification</a>),</li>
+<li><a href="http://perso.crans.org/besson/agreg/m/2/">This (French) homepage of a programming project</a> on <a href="https://en.wikipedia.org/wiki/Eulerian_path#Properties">Euler theorems on Eulerian path</a>. I did this as an assignement for <a href="http://perso.crans.org/besson/cv.en.pdf">my M.Sc. of Computer Science in 2014</a>, and it was also a good training for one oral exam of the <a href="https://en.wikipedia.org/wiki/Agr%C3%A9gation">French national competitive examination to become a prep' school professor</a> in Mathematics and Computer Science (for <a href="http://web.archive.org/web/20140709144720/agreg.org/ResultatsMerite2014.html">which I have been ranked 23rd among 795</a> in 2014!).</li>
+</ul>
+<hr />
+<h3>Autocompile on the fly ?</h3>
+<p>Make a version "on the browser" ?
+Something like, if <a href="http://lbesson.bitbucket.org/md/index.html" title="Explanations on StrapDown.js !">index.html</a> uses <a href="http://lbesson.bitbucket.org/md/" title="Homepage of StrapDown.js !">StrapDown.js</a>, then <a href="index.html?pdf">index.html?pdf</a> can be the same HTML page,
+but using javascript (like <a href="https://github.com/manuels/texlive.js/">texlive.js</a>)
+to autoproduce a PDF version of the page in the background, asking to download it when it is done.</p>
+<p><a href="http://manuels.github.io/texlive.js">An example is there</a>. It is so cool I want to use it :)</p>
+<h3>Add a "Compile to PDF with TeXLive" button in StrapDown theme</h3>
+<p>I added a <a href="http://lbesson.bitbucket.org/squirt/">Squirt</a> button
+to the two <a href="http://lbesson.bitbucket.org/md/" title="Homepage of StrapDown.js !">StrapDown.js</a> theme, and therefore I guess
+it could be possible to do the same for a "Compile to PDF with TeXLive" button !</p>
+<hr />
+<h1>About</h1>
+<h3>Hacked by <a href="https://bitbucket.org/lbesson">Lilian Besson</a></h3>
+<h3>Languages</h3>
+<ul>
+<li>GNU Bash v4+ for the script,</li>
+<li>Markdown and <a href="http://lbesson.bitbucket.org/md/" title="Homepage of StrapDown.js !">StrapDown.js</a> for this page.</li>
+</ul>
+<h3>License</h3>
+<p>This project is released under the <strong>GPLv3 license</strong>, for more details,
+take a look at the <a href="http://besson.qc.to/LICENSE.html">LICENSE</a> file in the source.</p>
+<p><em>Basically, that allow you to use all or part of the project for you own business.</em></p></body>
+</html>
+
