@@ -1,0 +1,149 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><title>StrapDown.js Test page</title></head><body><xmp>
+# Strapdown Test Page
+> [Source](http://strapdown.ztx.io/test.html)
+
+## Test Mathjax
+
+If you lend me 5\$, I will have 10\$ in my pocket. Do you know $\sqrt{3x-1}+(1+x)^2$ and $x_{1,2} = \frac{-b \pm \sqrt{b^2-4ac}}{2b}.$
+
+And what's this???
+
+$$ \frac{R_a T_{im}}{V_{im}} $$
+
+| Align Left    | Align Center  | Align Right |
+| ------------- |:-------------:| -----:|
+| test one      | dollar        | $1600 |
+| double dollar | also works |   \$\$12 |
+| zebra stripes | are neat      |    \$\$1 |
+
+Hey, let's do something fantastic.
+
+$$
+\mathbf{I}_n = \left.  \left(
+    \vphantom{
+        \begin{array}{c}
+            1\\1\\1\\1\\1
+        \end{array}
+    }
+    \smash{
+        \underbrace{
+            \begin{array}{ccccc}
+                1&0&0&\cdots &0\\ 0&1&0&\cdots &0\\ 0&0&1&\cdots &0\\ \vdots&&&\ddots&\\ 0&0&0&\cdots &1
+            \end{array}
+        }
+        _{n\text{ columns}}
+    }
+    \right)\right\} \,n\text{ rows}
+$$
+
+
+Beautiful things always happen
+
+$$ \left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right) $$
+
+Some more basic ones
+
+$$ (a \pm b) \% m \equiv (a \% m \pm b \% m ) \% m $$
+
+$$ a \equiv b \pmod{m} \rightarrow ac \equiv bc \pmod{m} $$
+
+$$ \left.\begin{array}{l} a\equiv b \pmod{m} \\ x \equiv y\pmod{m} \end{array}\right\} ax \equiv by \pmod{m} $$
+
+$$ \left.\begin{array}{l} ac \equiv bc \pmod{m} \\ (c,m)=1 \end{array}\right\} a\equiv b \pmod{m} $$
+
+$$ a \equiv b \pmod{cm} \rightarrow a \equiv b \pmod{m} $$
+
+$$ \left.\begin{array}{l} a\equiv b\pmod{m}\\ n | m \end{array}\right\} a\equiv b\pmod{n}$$
+
+$$ 1 \times 2 $$
+
+## An Identity of Ramanujan
+
+$$ \frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} =  1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}}  {1+\frac{e^{-8\pi}} {1+\ldots} } } } $$
+
+# code syntax highlight
+
+## html test
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="keywords" content=""/>
+        <meta name="description" content=""/>
+        <link rel="shortcut icon" href="/static/img/favicon.ico"/>
+        <link rel="stylesheet" type="text/css" href=""/>
+        <title>title</title>
+    </head>
+
+    <body>
+        <script type="text/javascript" src="here/but/nowhere.js"></script>
+    </body>
+</html>
+```
+
+## python test
+
+``` python
+@requires_authorization
+def somefunc(param1='', param2=0):
+    '''A docstring'''
+    if param1 > param2: # interesting
+        print 'Greater'
+    return (param2 - param1 + 1) or None
+class SomeClass:
+    pass
+
+a = int(3)
+>>> message = '''interpreter
+... prompt'''
+```
+
+For `python` use `type(name, bases, dict)` to construct dynamic class and subclass base classes.
+
+## bash test
+
+```bash
+#!/bin/sh
+
+dir=.
+mode="linear"       # linear or recursion
+[ ! -z "$1" ] && dir="$1"
+
+shift
+
+echo "playing dir $dir"
+
+while :; do
+    if [[ "x-l" == "x$1" ]]; then
+        mode="linear"
+    elif [[ "x-r" == "x$1" ]]; then
+        mode="recursion"
+    elif [[ -z "$1" ]]; then
+        break
+    fi
+done
+
+IFS=$'\n'
+
+```
+
+# Test nginx config file
+
+```
+location ~ \.php$ {
+   try_files      $uri = /404.html;
+   fastcgi_pass   unix:/run/php-fpm/php-fpm.sock;
+   fastcgi_split_path_info ^(.+\.php)(/.+)$;
+   fastcgi_param  SCRIPT_FILENAME  $document_root/$fastcgi_script_name;
+   fastcgi_index index.php;
+   include fastcgi_params;
+   root /usr/share/nginx/html;
+}
+```
+
+</xmp>
+<!-- <script type="text/javascript" src="http://0.0.0.0/s/md/strapdown.min.js?mathjax=y"></script>$ -->
+<script type="text/javascript" src="http://cdn.ztx.io/strapdown/strapdown.min.js"></script>$
+</body></html>
