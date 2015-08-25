@@ -1,0 +1,163 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><title>StrapDown.js on lbesson.bitbucket.org/md</title></head>
+<body>
+<h1>StrapDown.js</h1>
+<p><strong>StrapDown.js</strong> is an awesome <strong>on-the-fly</strong> <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a>
+to <a href="https://en.wikipedia.org/wiki/HTML">HTML</a> <a href="https://en.wikipedia.org/wiki/Compiler">text processor</a>.</p>
+<h2>Features</h2>
+<p><strong>StrapDown.js</strong> is already pretty advanced, as you can see by yourself with this very page (powered by StrapDown.js of course).</p>
+<ol>
+<li><em>Directly write your documents in Markdown</em>, and let the browser do the boring <em>compilation</em> steps,</li>
+<li>no need for CSS, theming or painful styling: <em>StrapDown.js</em> is already <em>friggin' beautiful</em>, and <em>responsive</em>,</li>
+<li><em>quick</em> and <em>secure</em>, thanks to <em>bitbucket</em> and its SSL support (even if the certificate is not valid for <a href="https://lbesson.bitbucket.org">https://lbesson.bitbucket.org</a>, it is still secure),</li>
+<li>an almost perfect support for <em>text-only</em> browsers (as w3m, links, or elinks): <em>pure Markdown</em> is simpler to read than complicated HTML full of javascript, images (or worse),</li>
+<li>no external dependencies other than itself (and <a href="http://www.mathjax.org/">MathJax</a> if you want to include it),</li>
+<li>no spying, no logging, no external leaking of your pages (and <a href="http://perso.crans.org/besson/beacon.html">Google Analytics with a 1px beacon image</a> can be included with an option, and unfortunately <a href="https://confluence.atlassian.com/display/BITBUCKET/Publishing+a+Website+on+Bitbucket#PublishingaWebsiteonBitbucket-TechnicalFeaturesandLimitationsofthisFeature">rum.js from bitbucket hosting server</a>),</li>
+<li>an excellent support of <a href="http://www.mathjax.org/"><em>MathJax</em></a>, as shown in <a href="example3.html">this example</a> or <a href="example5.html">that one</a>,</li>
+<li>and, the last but not the least, an <em>experimental</em> embedding of the awesome <a href="http://lbesson.bitbucket.org/squirt">SquirtFR</a> bookmarklet to read <em>as quickly as Lucky Luke</em>.</li>
+</ol>
+<h2>Defaults ?</h2>
+<p>But there is also have a few things you need to know before using it:</p>
+<ol>
+<li>It might get slow for <em>very long</em> pages (3000 lines can be already too much, <a href="3000.html">you can test by yourself with this long document</a>),</li>
+<li>a reduced support for browsers <em>without javascript</em> or <em>with javascript disabled</em> (the pages are still readable, but really ugly),</li>
+<li>hosted on bitbucket, which is wonderful but <em>might</em> not be always available (~ 3 hours of maintenance every 6 months, as shown with a small screenshot below).</li>
+</ol>
+<h2>Concretly</h2>
+<p>Concretly, bitbucket is always <em>up</em>, <em>secured</em> and <em>quick</em> (oooh, and bitbucket is also awesome, completely free, and awesome too). Yeah, <em>bitbucket is so awesome</em> that I had to say it <em>twice</em>, you read it correctly!</p>
+<p>But if you prefer, feel free to download the project (with <a href="https://bitbucket.org/lbesson/lbesson.bitbucket.org/downloads/StrapDown.js.zip">StrapDown.js.zip</a>) and upload it somewhere on your own server, or locally on your machine.</p>
+<blockquote>
+<h3>A quick "thank you" to the <a href="https://github.com/arturadib/strapdown/">initial project</a></h3>
+<p>My version of StrapDown.js is a fork of <a href="http://strapdownjs.com">strapdownjs.com</a>, a cool project that <a href="https://github.com/arturadib/strapdown/graphs/contributors">kinda seems dead by now</a>.</p>
+</blockquote>
+<hr />
+<h2>How to start using StrapDown.js ?</h2>
+<p><strong>Just follow this short tutorial</strong> :</p>
+<h3>1) <a href="example0.html">Default template to use</a> <em>(you can click this to see it)</em></h3>
+<p>Create an empty file, save it to <em>mytext.html</em>
+(yes, '<em>.html</em>' as HTML, but you will write in Markdown in no time),
+and then copy and paste the following 5 lines :</p>
+<p>```markdown</p>
+<h3>Write here in Markdown rather than in HTML</h3>
+<blockquote>
+<p>This document is empty right now. Fill it out with awesome content !</p>
+</blockquote>
+<p>```</p>
+<h3>2) <a href="example1.html">A first example</a> <em>(you can click this to see it)</em></h3>
+<p>There we show how to use some basic markup.</p>
+<p>```markdown</p>
+<h1>This is a Markdown document</h1>
+<p>You can now write your web page in Markdown.</p>
+<p>You opened a <code>textarea</code> tag, but a <code>xmp</code> tag works as well.</p>
+<p>And, yes, it is <strong>as simple</strong> as <strong>one</strong> HTML line at the beginning and <strong>one</strong> HTML line at the end of this document.
+```</p>
+<h3>3) <a href="example2.html">A second example</a> <em>(you can click this to see it)</em></h3>
+<p>There we embed two images, and describe a little more how cool is StrapDown.js !
+We also use another theme (<em>united</em>).</p>
+<p>```markdown</p>
+<h1>This is a Markdown document</h1>
+<p>You can now write your web page in Markdown.
+You opened a <code>textarea</code> tag, but a <code>xmp</code> tag works as well.
+And, yes, it is <strong>as simple</strong> as <strong>one</strong> HTML line at the beginning and <strong>one</strong> HTML line at the end of this document.</p>
+<h2>What to say more</h2>
+<p>Feel free to use it, redistribute it etc, <em>under the condition of the GPLv3 License</em>.</p>
+<h2>Only for textual, simple documents</h2>
+<p>StrapDown.js is <em>awesome</em> to quickly build nice-looking web pages,
+but it might not be efficient for anything more complicated, as it is really not designed for it.</p>
+<h2>Add a picture ?</h2>
+<p>With Markdown syntax, it's easy : <img alt="GA|Analytics" src="https://ga-beacon.appspot.com/UA-38514290-14/example2.html" title="Thanks to ga-beacon" />.</p>
+<h3>An other one ?</h3>
+<p>Alright, here comes the mighty Cthulhu <img alt="Logo Squirt" src="../squirt/images/logo.png" title="Logo Cthulhu" /></p>
+<h3>A last one, because it's dangerous to go alone :</h3>
+<p><img alt="Logo Take this from dotcore" src="../squirt/images/takethis.jpg" title="Logo «Take this» from dotcore" /></p>
+<h2>Add anything you want, it <em>might</em> work</h2>
+<p>For instance, you can add use Google Analytics to monitor the page's activity,
+with including a piece of Javascript code, before <em>or</em> after closing the <em>textarea</em> tag.</p>
+<p>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create','UA-38514290-14','lbesson.bitbucket.org'); ga('send','pageview');
+  The previous parapraph was supposed to include Google Analytics web monitoring tool,
+  but hey, you are browsing without JavaScript enabled, what can I do for it ? <br/>
+  Maybe you are using a text-only browser (w3m, links, elinks ? I love elinks !),
+  or a 19th-century IE, or maybe you disabled JavaScript globally (which is kinda stupid) or site-by-site (with NoScript, as I do, which is brilliant, and safer).</p>
+<h2>That's it</h2>
+<p>This was a brief overview, to show the basic use of <a href="index.html">StrapDown.js</a>.
+```</p>
+<h3>4) Last examples, with <a href="http://www.mathjax.org/">MathJax</a> enabled</h3>
+<p>StrapDown.js comes with an <em>easy</em> and <em>excellent</em> support of the incredible <a href="http://www.mathjax.org/">MathJax</a>,
+as shown in these three examples: <a href="example3.html">example n°3</a> and <a href="example4.html">example n°4</a>, and <a href="example5.html">the last one</a> which shows a new and quicker way to include <a href="http://www.mathjax.org/">MathJax</a> (from StrapDown <em>v0.5</em>).</p>
+<hr />
+<h1>Themes</h1>
+<p>There is now 6 different themes, coming from <a href="http://bootswatch.com/">http://bootswatch.com/united</a> and from the original project (<a href="http://strapdownjs.com" title="Original project's website">strapdownjs.com</a>) :</p>
+<ul>
+<li>cyborg, as used by <em>the page</em> <a href="http://lbesson.bitbucket.org/md/index.html">you are currently reading</a> (and a <a href="http://bootswatch.com/cyborg">demo on bootswatch.com/cyborg</a>),</li>
+<li>and united (as used <a href="example2.html">here</a>!), inspired from <a href="https://www.ubuntu.com/">ubuntu</a> (and a <a href="http://bootswatch.com/united">demo on bootswatch.com/united</a>).</li>
+</ul>
+<p>I recently added some new themes, and now there is <a href="https://bitbucket.org/lbesson/lbesson.bitbucket.org/src/master/md/themes/">these 4 new themes</a>:</p>
+<ul>
+<li><a href="https://bitbucket.org/lbesson/lbesson.bitbucket.org/src/master/md/themes/darkly.css">darkly</a> (and a <a href="http://bootswatch.com/darkly">demo on bootswatch.com/darkly</a>),</li>
+<li><a href="https://bitbucket.org/lbesson/lbesson.bitbucket.org/src/master/md/themes/lumen.css">lumen</a> (and a <a href="http://bootswatch.com/lumen">demo on bootswatch.com/lumen</a>),</li>
+<li><a href="https://bitbucket.org/lbesson/lbesson.bitbucket.org/src/master/md/themes/paper.css">paper</a> (and a <a href="http://bootswatch.com/paper">demo on bootswatch.com/paper</a>),</li>
+<li><a href="https://bitbucket.org/lbesson/lbesson.bitbucket.org/src/master/md/themes/simplex.css">simplex</a> (and a <a href="http://bootswatch.com/simplex">demo on bootswatch.com/simplex</a>).</li>
+</ul>
+<hr />
+<h1>Cloning the StrapDown.js project?</h1>
+<p>As of now, StrapDown.js does <strong>not</strong> have it own git repository.
+And I don't want to, because it is <em>cleaner</em> to let it live on <a href="http://lbesson.bitbucket.org/md">http://lbesson.bitbucket.org/md</a>.</p>
+<h3><a href="https://bitbucket.org/lbesson/lbesson.bitbucket.org/downloads/StrapDown.js.zip">A zip archive of the project</a></h3>
+<p>But, there, you can easily download this <em>up-to-date</em> version of the <em>md</em> subdir of my <a href="https://bitbucket.org/lbesson/lbesson.bitbucket.org/src/master/md/">lbesson.bitbucket.org</a> repository:
+<a href="https://bitbucket.org/lbesson/lbesson.bitbucket.org/downloads/StrapDown.js.zip">StrapDown.js.zip</a>
+(and <a href="https://bitbucket.org/lbesson/lbesson.bitbucket.org/downloads/StrapDown.js.zip.asc">its PGP signature</a>).</p>
+<hr />
+<h1>Printing to a nice looking PDF?</h1>
+<p>Rather than use the built-in <em>"Print to a PDF"</em> function of your browser, you should consider using <a href="strapdown2pdf.html">StrapDown2PDF</a>.
+It has a perfect support for Markdown markup.</p>
+<p><strong>Warning:</strong> but the <a href="https://en.wikipedia.org/wiki/LaTeX">LaTeX</a> / <a href="http://www.mathjax.org/">MathJax</a> support is still limited.</p>
+<h3>Some examples of a good PDF printed version of a StrapDown.js powered page</h3>
+<ul>
+<li><a href="http://perso.crans.org/besson/publis/10_10_2014__Liberation.en.html">This (English) translation of a French press article</a> about <a href="http://www.mahindraecolecentrale.edu.in/discover.html">Mahindra École Centrale</a>, nicely printed to <a href="http://perso.crans.org/besson/publis/10_10_2014__Liberation.en.pdf">this PDF</a>,</li>
+<li><a href="http://perso.crans.org/besson/publis/29_10_2014__LeMonde.en.html">This (English) translation of another French press article</a> about the future <a href="http://www.centrale-casablanca.ma/site/home.html">École Centrale Casablanca</a>, nicely printed to <a href="http://perso.crans.org/besson/publis/29_10_2014__LeMonde.en.pdf">a PDF, quickly modified by hand to include an image</a>,</li>
+<li><a href="http://perso.crans.org/besson/publis/PDE_09_2014/index.html">This small (French) research report</a> on a <a href="https://en.wikipedia.org/wiki/Partial_differential_equations">non-linear Partial Differential Equation</a>, nicely printed to <a href="http://perso.crans.org/besson/publis/PDE_09_2014/index.pdf">a PDF, with very good support of LaTeX</a> (<a href="https://bitbucket.org/lbesson/bin/diff/strapdown2pdf?diff2=20fd4babc524&amp;at=master">since this modification</a>),</li>
+<li><a href="http://perso.crans.org/besson/agreg/m/2/">This (French) homepage of a programming project</a> on <a href="https://en.wikipedia.org/wiki/Eulerian_path#Properties">Euler theorems on Eulerian path</a>. I did this as an assignement for <a href="http://perso.crans.org/besson/cv.en.pdf">my M.Sc. of Computer Science in 2014</a>, and it was also a good training for one oral exam of the <a href="https://en.wikipedia.org/wiki/Agr%C3%A9gation">French national competitive examination to become a prep' school professor</a> in Mathematics and Computer Science (for <a href="http://web.archive.org/web/20140709144720/agreg.org/ResultatsMerite2014.html">which I have been ranked 23rd among 795</a> in 2014!).</li>
+</ul>
+<hr />
+<h1>Future features or ideas?</h1>
+<ul>
+<li>
+<p>Improve the SSL certificate? As that screenshot shows, <a href="https://lbesson.bitbucket.org/md/">SSL is available</a>, but the certificate is not valid (it has been signed only for <a href="https://bitbucket.org">bitbucket.org</a> and <a href="https://www.bitbucket.org">www.bitbucket.org</a>):</p>
+</li>
+<li>
+<p>Maybe host it on a <a href="https://en.wikipedia.org/wiki/Content_delivery_network">CDN</a>?</p>
+</li>
+<li>Hack something to force using <em>local cached</em> version of the script and stylesheets rather than downloading them every time?</li>
+<li>
+<p>More "quick access" buttons on the top-navbar? (there is already a button to <a href="http://lbesson.bitbucket.org/squirt">use Squirt</a> (<a href="./SquirtFR_on_a_StrapDownJS_page.png">as shown in the example below</a>), one to <a href="http://www.mathjax.org">activate MathJax</a>, and one to <a href="http://perso.crans.org/besson/beacon.en.html">test a Google Analytics Beacon image</a>.)</p>
+</li>
+<li>
+<p>… and any new idea is most surely welcome!</p>
+</li>
+</ul>
+<h3>Some people are using it or talking about it!</h3>
+<ul>
+<li><a href="https://github.com/arturadib/strapdown/issues/36">This question asked on Github on the 1st of May of 2014</a> by <a href="https://github.com/hardly">hardly</a> about the <a href="https://github.com/arturadib/strapdown">old strapdown repository</a>. To answer that question: the main difference is than I am still interested and eager to work on <a href="http://lbesson.bitbucket.org/md/">my StrapDown.js</a>, but it seems to not be the case of <a href="https://github.com/arturadib/">the previous developper</a>.</li>
+<li><a href="http://quantego.com/">These guys at Quantego</a> are using my StrapDown.js for <a href="https://slides.quantego.com/">that small and interesting page</a>.</li>
+</ul>
+<blockquote>
+<p>If you are using (or have used) my StrapDown.js, you can send an email, or <a href="http://perso.crans.org/besson/callme.en.html">contact me if you want</a>, I would love to hear any feedback from you!</p>
+</blockquote>
+<hr />
+<h1>About</h1>
+<h3>Forged by <a href="http://perso.crans.org/besson/">Lilian Besson</a> (<a href="https://bitbucket.org/lbesson">lbesson on bitbucket</a>).</h3>
+<h3>Languages</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a>;</li>
+<li><a href="https://en.wikipedia.org/wiki/Javascript">JavaScript</a>;</li>
+<li><a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets">CSS 3</a>.</li>
+</ul>
+<h3>License</h3>
+<p>This project is released under the <strong>GPLv3 license</strong>, for more details,
+take a look at the <a href="http://perso.crans.org/besson/LICENSE.html">LICENSE</a> file in the source.</p>
+<p><em>Basically, that allow you to use all or part of the project for you own business.</em></p></body>
+</html>
+
