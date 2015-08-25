@@ -1,0 +1,147 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><title>StrapDown.js supports Markdown tables too!</title></head><body><xmp>
+<ul class="pager">
+<li class="previous"><a href="example5.html">← Previous example</a></li>
+<li><a href="index.html">Index</a></li>
+<li class="next"><a href="example7.html">Next example →</a></li>
+</ul>
+
+# Examples of HTML *tables* written in Markdown
+> This *StrapDown*-flavored HTML page is a demo of *how to write a table with Markdown*, and how a table will be (nicely) rendered by StrapDown.js.
+
+> ### (Why this demo?)
+> Someone asked me (01-2015) about that feature, so, *here is the demo!*
+
+---
+
+### How to enable the *tables* rendering?
+In order for StrapDown.js to be able to read and render HTML **tables** (the [`<table>`]() tag),
+**no need to ask any special option** (as opposed to [the MathJax feature allowing you to embed LaTeX equations](example5.html)).
+
+
+#### Some help? (about the `<table>` HTML tag)
+> More documentation about that `<table>` tag can be found on these sites: [www.htmlquick.com/reference/tags/table.html](http://www.htmlquick.com/reference/tags/table.html), [www.html.am/tags/html-table-tag.cfm](http://www.html.am/tags/html-table-tag.cfm), [www.w3ctutorial.com/html5-tags/tag-table](http://www.w3ctutorial.com/html5-tags/tag-table), and the famous [w3schools.com/html/html_tables.asp](http://w3schools.com/html/html_tables.asp) or [w3schools.com/tags/tag_table.asp](http://w3schools.com/tags/tag_table.asp).
+
+---
+
+## How to write a Markdown table ?
+> More details about the syntax for Markdown tables can be found on the **GitHub Flavored Markdown** document : [help.github.com/articles/github-flavored-markdown/#tables](https://help.github.com/articles/github-flavored-markdown/#tables).
+
+### First example
+The basic syntax to have in mind is the following :
+
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+
+> The previous table corresponds to the following *Markdown* code:
+>
+>     First Header  | Second Header
+>     ------------- | -------------
+>     Content Cell  | Content Cell
+>     Content Cell  | Content Cell
+
+
+### Second example
+> I follow the examples from [GitHub's help page about tables in Markdown](https://help.github.com/articles/github-flavored-markdown/#tables).
+
+| Name | Description          |
+| ------------- | ----------- |
+| Help      | Display the help window.|
+| Close     | Closes a window     |
+
+> The previous table corresponds to the following *Markdown* code:
+>
+>     | Name | Description          |
+>     | ------------- | ----------- |
+>     | Help      | Display the help window.|
+>     | Close     | Closes a window     |
+
+
+### Third example
+> That example is also **extremely satisfying**, because StrapDown.js *does* support the alignment custom syntax (from [GFM](https://help.github.com/articles/github-flavored-markdown/#tables)):
+
+| Left-Aligned  | Center Aligned  | Right Aligned |
+| :------------ |:---------------:| -----:|
+| col 3 is      | some wordy text | $1600 |
+| col 2 is      | centered        |   $12 |
+| zebra stripes | are neat        |    $1 |
+
+> The previous table corresponds to the following *Markdown* code:
+>
+>     | Left-Aligned  | Center Aligned  | Right Aligned |
+>     | :------------ |:---------------:| -----:|
+>     | col 3 is      | some wordy text | $1600 |
+>     | col 2 is      | centered        |   $12 |
+>     | zebra stripes | are neat        |    $1 |
+
+#### Hoho, a small trap:
+> At first, I thought that this feature was not available, but it was my fault, as I use an old version of the [united](http://bootswatch.com/united) BootStrap theme.
+>
+> Hence I modified one line, which was forcing the table content to be left-aligned, and removed the `text-align:left` element:
+> ```css
+> .table th,.table td { [.. stuff]; text-align:left; } -----> .table th,.table td { [.. stuff];  }
+> ```
+> Now, this [has been fixed](https://bitbucket.org/lbesson/lbesson.bitbucket.org/commits/fba4d321b4445e2e2ed7e8762a4a89cf8a673238) (the 22-01-2015).
+
+---
+
+---
+
+## A partial list of the [Justice League of America](https://en.wikipedia.org/wiki/Justice_League)
+[StrapDown.js](http://lbesson.bitbucket.org/md/index.html) supports *really well* these Markdown tables, and the [GFM extension](https://help.github.com/articles/github-flavored-markdown) for alignment.
+
+Here is a last example, displaying some *super heroes* ^^:
+
+
+| Number | Name | Secret Name! | Super Hero Group | Gender | Email Address | Photo |
+| :----- |:----:|:------------:|:----------------:|:------:|:-------------:| -----:|
+| 01 | **Superman** | *Clark Kent* | <abbr title="Juctice League of America!! Osef, I am French ;)">JLoA</abbr> | Male | [superman@heroes.jloa.gov](mailto:superman@heroes.jloa.gov) | ![Picture for hero #01](https://randomuser.me/api/portraits/med/men/72.jpg "Picture for super-hero #01")|
+| 02 | **Batman** | *Bruce Wayne* | <abbr title="Juctice League of America!! Osef, I am French ;)">JLoA</abbr> | Male | [batman@heroes.jloa.gov](mailto:batman@heroes.jloa.gov) | ![Picture for hero #02](https://randomuser.me/api/portraits/med/men/45.jpg "Picture for super-hero #02")|
+| 03 | **Green Lantern** | *Secret!* | <abbr title="Juctice League of America!! Osef, I am French ;)">JLoA</abbr> | Male | [Green.Lantern@heroes.jloa.gov](mailto:Green.Lantern@heroes.jloa.gov) | ![Picture for hero #03](https://randomuser.me/api/portraits/med/men/51.jpg "Picture for super-hero #03")|
+| 04 | **Wonder Woman** | *Secret!* | <abbr title="Juctice League of America!! Osef, I am French ;)">JLoA</abbr> | Female | [Wonder.Woman@heroes.jloa.gov](mailto:Wonder.Woman@heroes.jloa.gov) | ![Picture for hero #04](https://randomuser.me/api/portraits/med/women/25.jpg "Picture for super-hero #04")|
+| 05 | **AwkGirl** | *Too lazy to look for it* | <abbr title="Juctice League of America!! Osef, I am French ;)">JLoA</abbr> | Female | [AwkGirl@heroes.jloa.gov](mailto:AwkGirl@heroes.jloa.gov) | ![Picture for hero #05](https://randomuser.me/api/portraits/med/women/88.jpg "Picture for super-hero #05")|
+
+
+> *Hint:* these emails addresses are really secret, keep they from yourself, and especially from super villains! (Seriously: **they are fake!**)
+
+> Thanks to the *awesome* [RandomUser.me](https://randomuser.me/) for providing **fake** profile pictures for our super-heroes!
+
+---
+
+## A personnal example
+And if you may, I will conclude these examples with a more personal one:
+
+| *Scholar* Year |  My age <br>(when started/when finishing)   | Scholar level | City, *Country* |
+| :----------- | :----: | :-----------: | --: |
+| 2014 ~ 2015 | 21 → 22 | [Assistant professor](http://web.archive.org/web/20141103063707/http://www.mahindraecolecentrale.edu.in/faculties.html), Maths and CS | Hyderabad, *India* |
+| 2013 ~ 2014 | 20 → 21 | 2nd Year M.Sc. (Maths, CS)<br> and <a href="http://web.archive.org/web/20140709144720/agreg.org/ResultatsMerite2014.html" title="Over ~1300 candidates!">ranked 23rd</a> at the <a title="French national competitive exam for prep' schools teachers" href="https://en.wikipedia.org/wiki/Agr%C3%A9gation">French Agrégation</a> | Cachan (Paris), *France* |
+| 2012 ~ 2013 | 19 → 20 | 1st Year M.Sc. (Maths, CS) | Cachan (Paris), *France* |
+| 2011 ~ 2012 | 18 → 19 | 3rd Year B.Sc. (Maths, CS) | Cachan (Paris), *France* |
+| 2010 ~ 2012 | 17 → 18 | 2nd Year B.Sc. (Maths and Physics) | Marseille, *France* |
+| 2009 ~ 2010 | 16 → 17 | 1st Year B.Sc. (*MPSI*) | Marseille, *France* |
+| 2008 ~ 2009 | 15 → 16 | Scientific <abbr title="French highschool degree">*"Baccalauréat"*</abbr> | Briançon, *France* |
+
+
+> ... Yeah, I am kinda proud of my academic education and [my curriculum](http://lbesson.tk) ([also here](http://besson.qc.to/cv.en.pdf) or [here](http://perso.crans.org/besson/cv.en.pdf)).
+
+---
+
+## One more example: how to easily add a search input button for a table?
+→ [Go read the next example please](example7.html) to know more about that.
+It's pretty easy, and works extremely well :) !
+
+---
+
+### End of the examples
+That's all for today! [Go back to StrapDown.js main page](index.html)?
+
+---
+
+<ul class="pager">
+<li class="previous"><a href="example5.html">← Previous example</a></li>
+<li><a href="index.html">Index</a></li>
+<li class="next"><a href="example7.html">Next example →</a></li>
+</ul>
+
+</xmp><script type="text/javascript" src="strapdown.min.js?theme=united"></script></body></html>

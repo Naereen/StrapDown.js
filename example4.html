@@ -1,0 +1,115 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><title>A second demo of MathJax with StrapDown.js</title></head><body><xmp theme="paper">
+<ul class="pager">
+<li class="previous"><a href="example3.html">← Previous example</a></li>
+<li><a href="index.html">Index</a></li>
+<li class="next"><a href="example5.html">Next example →</a></li>
+</ul>
+
+# A second example with [MathJax](http://www.mathjax.org/) activacted (and the *paper* theme)
+> To know how to include MathJax in a *StrapDown*-flavored HTML page, you can read this [example 3](example3.html).
+To discover an even nicer way to import MathJax, read [the last example](example5.html).
+
+> These examples are directly imported from [the samples from the mathjax.org website](http://www.mathjax.org/demos/tex-samples/).
+
+> The following equations are included in the HTML source code as **pure LaTeX code**.
+
+***
+
+### The [Lorenz Equations](https://en.wikipedia.org/wiki/Lorenz_system#Overview)
+### $$\left\\\{\begin{aligned}  \dot{x} & = \sigma(y-x) \\\\  \dot{y} & = \rho x - y - xz \\\\  \dot{z} & = -\beta z + xy \end{aligned}\right. $$
+
+> The previous equation corresponds to the following code, inserted *verbatim* in the Markdown part of this page (*ie.* after the opening ``xmp`` tag and before its closing):
+```latex
+$$\left\\\{\begin{aligned}
+\dot{x} & = \sigma(y-x) \\\\
+\dot{y} & = \rho x - y - xz \\\\
+\dot{z} & = -\beta z + xy
+\end{aligned}\right. $$
+```
+
+### The [Cauchy-Schwarz Inequality](https://en.wikipedia.org/wiki/Cauchy%E2%80%93Schwarz_inequality#Rn) (in $\mathbb{R}^n$)
+### $$ \left( \sum\_{k=1}^n a\_k b\_k \right)^2 \leq \left( \sum\_{k=1}^n a\_k^2 \right) \left( \sum\_{k=1}^n b\_k^2 \right) $$
+
+> The previous equation corresponds to the following code, inserted *verbatim* in the Markdown part of this page:
+```latex
+$$ \left( \sum\_{k=1}^n a\_k b\_k \right)^2 \leq \left( \sum\_{k=1}^n a\_k^2 \right) \left( \sum\_{k=1}^n b\_k^2 \right) $$
+```
+
+### A [Cross Product](https://en.wikipedia.org/wiki/Cross_product#Coordinate_notation) Formula
+### $$\mathbf{V}\_1 \times \mathbf{V}\_2 =  \begin{vmatrix}  \mathbf{i} & \mathbf{j} & \mathbf{k} \\\\  \frac{\partial X}{\partial u} &  \frac{\partial Y}{\partial u} & 0 \\\\  \frac{\partial X}{\partial v} &  \frac{\partial Y}{\partial v} & 0  \end{vmatrix}  $$
+
+> The previous equation corresponds to the following code, inserted *verbatim* in the Markdown part of this page:
+```latex
+$$\mathbf{V}\_1 \times \mathbf{V}\_2 =  \begin{vmatrix}
+\mathbf{i} & \mathbf{j} & \mathbf{k} \\\\
+\frac{\partial X}{\partial u} &  \frac{\partial Y}{\partial u} & 0 \\\\
+\frac{\partial X}{\partial v} &  \frac{\partial Y}{\partial v} & 0
+\end{vmatrix}  $$
+```
+
+### The probability of [getting $k$ heads when flipping $n$ coins](https://en.wikipedia.org/wiki/Bernoulli_process#Binomial_distribution) is
+### $$P(E) = {n \choose k} p^k (1-p)^{n-k} $$
+
+> The previous equation corresponds to the following code, inserted *verbatim* in the Markdown part of this page:
+```latex
+$$P(E) = {n \choose k} p^k (1-p)^{n-k} $$
+```
+
+### An Identity of Ramanujan (obviously)
+### $$ \frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} =  1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}}  {1+\frac{e^{-8\pi}} {1+\ldots} } } } $$
+
+> The previous equation corresponds to the following code, inserted *verbatim* in the Markdown part of this page:
+```latex
+$$ \frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} =
+1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}}
+{1+\frac{e^{-8\pi}} {1+\ldots} } } } $$
+```
+
+### A [Rogers-Ramanujan Identity](https://en.wikipedia.org/wiki/Rogers%E2%80%93Ramanujan_identities)
+### $$  1 + \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots =  \prod\_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})},  \quad\quad \text{for $|q|&lt;1$}. $$
+
+> The previous equation corresponds to the following code, inserted *verbatim* in the Markdown part of this page:
+```latex
+$$  1 + \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots =
+\prod\_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})},
+\quad\quad \text{for $|q|&lt;1$}. $$
+```
+
+### [Maxwell's Equations](https://en.wikipedia.org/wiki/Maxwell%27s_equations)
+### $$  \left\\\{\begin{aligned}  	\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} & = \frac{4\pi}{c}\vec{\mathbf{j}} \\\\  	\nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\\\  	\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\\\  	\nabla \cdot \vec{\mathbf{B}} & = 0 \end{aligned}\right.  $$
+
+> The previous equation corresponds to the following code, inserted *verbatim* in the Markdown part of this page:
+```latex
+$$  \left\\\{\begin{aligned}
+	\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} & = \frac{4\pi}{c}\vec{\mathbf{j}} \\\\
+	\nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\\\
+	\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\\\
+	\nabla \cdot \vec{\mathbf{B}} & = 0 \end{aligned}\right.
+$$
+```
+
+As you can see, math environment (like ``aligned``) are supported by MathJax, even with the default configuration and no external plugins.
+
+****
+
+### Inline equations are also supported.
+Finally, while **display equations** look good for a page of samples, the ability to mix math and text in a paragraph is also important.
+This expression $\sqrt{3x-1}+(1+x)^2$ is an example of an **inline equation** (inserted with the code ``$\sqrt{3x-1}+(1+x)^2$``).
+As you see, MathJax equations can be used this way as well, without unduly disturbing the spacing between lines.
+
+### End of the examples
+That's all for today!
+
+---
+
+<ul class="pager">
+<li class="previous"><a href="example3.html">← Previous example</a></li>
+<li><a href="index.html">Index</a></li>
+<li class="next"><a href="example5.html">Next example →</a></li>
+</ul>
+
+</xmp>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$']], displayMath: [['$$', '$$']], processEscapes: true } });</script>
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript" src="//lbesson.bitbucket.org/md/strapdown.min.js?src=example4"></script>
+</body></html>

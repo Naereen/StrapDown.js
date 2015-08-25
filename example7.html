@@ -1,0 +1,111 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><title>Searching on a Markdown table?</title></head><body><xmp>
+<ul class="pager">
+<li class="previous"><a href="example6.html">← Previous example</a></li>
+<li><a href="index.html">Index</a></li>
+<li class="next disabled"><a href="#">(Last example)</a></li>
+</ul>
+
+# Example of how to search on a *HTML-table* written in Markdown
+> [This previous example](example6.html) is a *StrapDown*-flavored HTML page is a demo of *how to write a table with Markdown*, and how a table will be (nicely) rendered by StrapDown.js.
+
+#### Some help? (about that searching feature)
+> The code I used is a [**jQuery**](https://www.jquery.com/) *plug-in*, called [QuickSearch](http://deuxhuithuit.github.io/quicksearch/). More detail can be found on [its documentation](http://deuxhuithuit.github.io/quicksearch/).
+
+---
+
+## Searching on a Markdown table?
+> More details about the syntax for Markdown tables can be found on the **GitHub Flavored Markdown** document : [help.github.com/articles/github-flavored-markdown/#tables](https://help.github.com/articles/github-flavored-markdown/#tables).
+
+The goal of this demo is to show how easy (and pretty) it is to add a search feature to any table, written in Markdown (or HTML).
+
+That search feature is working **incredibly well**, on the box below, if you start typing "Su", it's already enough to select only the **Superman** line!
+
+---
+
+<div class="pull-right">
+<h3>Search on that table?</h3>
+<p>Thanks to the <a href="http://deuxhuithuit.github.io/quicksearch/">QuickSearch</a> <a href="https://www.jQuery.com/"><strong>jQuery</strong></a> <em>plug-in</em>.</p>
+<form><input class="form-control input-lg" type="text" name="search" value="" id="id_search" placeholder="Search on that table" autofocus />
+</form></div>
+
+# A partial list of the [Justice League of America](https://en.wikipedia.org/wiki/Justice_League)
+Here is an example of a table, displaying some *super heroes* ^^ <br>
+(fake picture, fake email address, etc).
+
+| Number | Name | Secret Name! | Organization | Gender | Email Address | Photo | *Awesomeness* |
+| :----- |:----:|:------------:|:------------:|:------:|:-------------:| -----:| ------------: |
+| 01 | **Wonder Woman** | *Secret!* | <abbr title="Juctice League of America!! Osef, I am French ;)">JLoA</abbr> | Female | [Wonder.Woman@heroes.jloa.gov](mailto:Wonder.Woman@heroes.jloa.gov) | ![Picture for hero #01](https://randomuser.me/api/portraits/med/women/25.jpg "Picture for super-hero #01")| *Really awesome* |
+| 02 | **Superman** | *Clark Kent* | <abbr title="Juctice League of America!! Osef, I am French ;)">JLoA</abbr> | Male | [superman@heroes.jloa.gov](mailto:superman@heroes.jloa.gov) | ![Picture for hero #02](https://randomuser.me/api/portraits/med/men/72.jpg "Picture for super-hero #02")| *OK* |
+| 03 | **Batman** | *Bruce Wayne* | <abbr title="Juctice League of America!! Osef, I am French ;)">JLoA</abbr> | Male | [batman@heroes.jloa.gov](mailto:batman@heroes.jloa.gov) | ![Picture for hero #03](https://randomuser.me/api/portraits/med/men/45.jpg "Picture for super-hero #03")| *Wonderful* |
+| 04 | **Green Lantern** | *Secret!* | <abbr title="Juctice League of America!! Osef, I am French ;)">JLoA</abbr> | Male | [Green.Lantern@heroes.jloa.gov](mailto:Green.Lantern@heroes.jloa.gov) | ![Picture for hero #04](https://randomuser.me/api/portraits/med/men/51.jpg "Picture for super-hero #04")| *OK* |
+| 05 | **AwkGirl** | *Too lazy to [look for](https://www.duckduckgo.com/?q=AwkGirl+real+name) it* ([seriously](https://en.wikipedia.org/wiki/Hawkgirl#Fictional_character_biography)) | <abbr title="Juctice League of America!! Osef, I am French ;)">JLoA</abbr> | Female | [AwkGirl@heroes.jloa.gov](mailto:AwkGirl@heroes.jloa.gov) | ![Picture for hero #05](https://randomuser.me/api/portraits/med/women/88.jpg "Picture for super-hero #05")| *Not great* |
+
+
+> *Hint:* these emails addresses are really secret, keep them for yourself, but most importantly, keep them away from super villains! (Seriously: **pictures and emails they are fake!**)
+
+> Thanks to the *awesome* [RandomUser.me](https://randomuser.me/) for providing **fake** profile pictures for our super-heroes! (And *free* and *open* to use pictures, thanks guys!)
+
+---
+
+# How to do it?
+Three steps:
+
+## 1) Add the search bar somewhere in your page
+One simple line of HTML code:
+
+```html
+<form><input type="text" name="search" value="" id="id_search" placeholder="Search on that table" autofocus /></form>
+```
+
+
+If you want to display on the right of the page (as I did above), let's use a cool [Bootstrap CSS feature](http://bootswatch.com/united):
+
+```html
+<div class="pull-right">
+<h3>Search on that table?</h3>
+<form><input type="text" name="search" value="" id="id_search" placeholder="Search on that table" autofocus />
+</form></div>
+```
+
+## 2) Load jQuery and the QuickSearch plug-in
+At the **end** of your [StrapDown.js](http://lbesson.bitbucket.org/md/index.html) document, include the `jquery` javascript file (in my case `jquery.js`, but could be `jquery.min.js`), and the quicksearch plug-in (`jquery.quicksearch.min.js` in my case), with the good path.
+In my example, I used the version that I stored on [my website](http://perso.crans.org/besson/), but you can use the **jQuery** CDN, or host them yourself on your site.
+
+What I did here was just these two simple lines.
+Be cautious to do it at *the end* of the document, **after the closing `xmp` tag** (or the `textarea` tag):
+
+```html
+<script type="text/javascript" src="http://perso.crans.org/besson/_static/jquery.js"></script>
+<script type="text/javascript" src="http://perso.crans.org/besson/_static/jquery.quicksearch.min.js"></script>
+```
+
+## 3) Initialize the search feature
+Finally, after loading the two scripts (step 2), one line of JavaScript in enough to conclude, by loading the QuickSearch plug-in, and initializing it:
+
+```html
+<script type="text/javascript" defer async>$('input#id_search').quicksearch('table tbody tr');</script>
+```
+
+> More explanations? This Javascript line has three parts:
+>  1. `$('input#id_search')` is using jQuery (the `$()` fonction) to select the DOM element of type `input` with `id=id_search` (id because of the `#`, it would be a class if `.`, like `div.navbar`),
+>  2. `.quicksearch(...)` is calling the `quicksearch` fonction (available because QuickSearch has been registered as a jQuery plug-in), using it for that DOM element (the input search bar),
+>  3. and finally we apply that fonction with the argument `'table tbody tr'`, which means that we initialize QuickSearch to look for all the `<table>` elements, only on their children `<tbody>` (content of the table), and only on the different lines (`<tr>`).
+
+---
+
+## End of the example
+That's all for today! [Go back to StrapDown.js main page](index.html)?
+
+---
+
+<ul class="pager">
+<li class="previous"><a href="example6.html">← Previous example</a></li>
+<li><a href="index.html">Index</a></li>
+<li class="next disabled"><a href="#">(Last example)</a></li>
+</ul>
+
+</xmp><script type="text/javascript" src="strapdown.min.js?theme=united"></script>
+<script type="text/javascript" src="http://perso.crans.org/besson/_static/jquery.js"></script>
+<script type="text/javascript" src="http://perso.crans.org/besson/_static/jquery.quicksearch.min.js"></script>
+<script type="text/javascript" defer async>$('input#id_search').quicksearch('table tbody tr');</script>
+</body></html>
