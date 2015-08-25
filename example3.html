@@ -1,0 +1,101 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><title>A simple demo of MathJax with StrapDown.js</title></head><body><xmp theme="united">
+<ul class="pager">
+<li class="previous"><a href="example2.html">← Previous example</a></li>
+<li><a href="index.html">Index</a></li>
+<li class="next"><a href="example4.html">Next example →</a></li>
+</ul>
+
+## This short example supports [MathJax](http://www.mathjax.org/)
+
+<p style="font-size:x-large;">
+Inline equations, as for instance the classic $\Delta = b^2-4ac$ and
+$x\_{1,2} = \frac{-b\pm\sqrt{\Delta}}{2a}$, or display equations as this one :
+	$$ J\_\alpha(x) = \sum\limits\_{m=0}^\infty \frac{(-1)^m}{m! \, \Gamma(m + \alpha + 1)}{\left({\frac{x}{2}}\right)}^{2 m + \alpha} $$
+</p>
+
+## From a classic math book
+But a less classic exercise about [holderian functions](https://en.wikipedia.org/wiki/H%C3%B6lder_condition)
+(more precisely, *Exercice 7*, Chapter 4.5, page 267, of the [Gourdon, "*Les maths en tête : Analyse*", $2^\text{nd}$ edition](http://www.amazon.fr/gp/product/2729837590) book).
+
+<p style="font-size:x-large;">
+$$ 4 \sum\_{n=1}^{+\infty} \rho\_n^2 \sin^2 nh = \frac{1}{2\pi} \int\_{-\pi}^{\pi}\lvert f(x+h) - f(x-h)\rvert^2 dx. $$
+</p>
+
+## How-to ?
+The previous equation is simply included in the Markdown code part as basic some $\LaTeX2e{}$ code :
+
+> ```latex
+$$ 4 \sum\_{n=1}^{+\infty} \rho\_n^2 \sin^2 nh = \frac{1}{2\pi} \int\_{-\pi}^{\pi}|f(x+h) - f(x-h)|^2 dx. $$
+```
+
+***
+
+## Yes, it is as simple as adding *one line at the bottom*
+You just have to load [MathJax](http://www.mathjax.org/) (as described [here](http://docs.mathjax.org/en/latest/configuration.html))
+from the bottom of a *StrapDown*-flavored page, for instance from the default *CDN* :
+
+> ```html
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+```
+
+You can consult [a second example](example4.html) to see some more advanced examples of LaTeX equations rendered with MathJax.
+
+### A better solution?
+From version 0.5, you can import MathJax in an even *quicker* way: you just have to add ``&mathjax=yes`` to the URL used to import [strapdown.min.js](index.html).
+See [the first paragraph of this third example](example5.html) to see this.
+
+***
+
+# Warning
+Be aware of the following limitations :
+
+## Escape the underscore ('``_``')
+The [StrapDown.js](//lbesson.bitbucket.org/md/index.html) text processor interprets
+underscores (the '``_``' symbol) as underline markup (like _this_),
+so be sure to escape the '``_``' in the $\LaTeX2e{}$ code.
+
+A *bad looking* example could be ``$\mathcal{M}_{n,m}(\mathbb{F_9})$``
+(which is **badly displayed** as $\mathcal{M}_{n,m}(\mathbb{F_9})$). _Ugly_ right ?
+
+Escape the '``_``' in the previous code to get ``$\mathcal{M}\_{n,m}(\mathbb{F\_9})$`` :
+now it is **nicely displayed** as $\mathcal{M}\_{n,m}(\mathbb{F\_9})$.
+
+## Escape some others Markdown markup code ('``*``', '``**``' or '``#``')
+The previous limitation is also true for other symbols, used for *Markdown as markup* and for *LaTeX as symbols*.
+
+An example could be ``$[ u^*; v^*](x)$`` (which is badly displayed as $[ u^*; v^*](x)$),
+which becomes ``$\[ u^\*; v^\*\]\(x\)$`` (now it is nicely displayed as $\[ u^\*; v^\*\]\(x\)$).
+
+A pretty good rule of thumb can be to **escape every Markdown markup symbols** in LaTeX code.
+Feel free to refresh your mind about which symbols are used as elements of the Markdown syntax
+with [this page](http://daringfireball.net/projects/markdown/syntax#list),
+or [this one on Wikipedia](https://en.wikipedia.org/wiki/Markdown).
+
+## Escape the antislash ('``\``')
+The antislash symbol, already escaped by an antislash ('``\``')
+is used in LaTeX to force a new line. It is usually used in aligned equations,
+as shown in the Lorenz Equations [here](example4.html).
+
+You should also escape the antislash, by typing ``\\`` where you would have
+used a simple ``\`` in LaTeX.
+
+***
+
+## See also
+ + [This page](http://besson.qc.to/math.html) shows how to use MathJax on a [Sphinx](http://sphinx-doc.org/) project.
+ + [This script (strapdown2pdf)](strapdown2pdf.html) to print to PDF a *StrapDown*-powered web page.
+It comes with a limited support of LaTeX (still not perfect).
+
+---
+
+<ul class="pager">
+<li class="previous"><a href="example2.html">← Previous example</a></li>
+<li><a href="index.html">Index</a></li>
+<li class="next"><a href="example4.html">Next example →</a></li>
+</ul>
+
+</xmp>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$']], displayMath: [['$$', '$$']], processEscapes: true } });</script>
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;locale=fr"></script>
+<script type="text/javascript" src="strapdown.min.js"></script>
+</body></html>
