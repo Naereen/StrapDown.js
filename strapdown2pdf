@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # By: Lilian BESSON
 # Email: Lilian.BESSON[AT]ens-cachan[DOT]fr
-# Date: 23-11-2014
+# Date: 24-10-2015
 # Web: http://besson.qc.to/bin/strapdown2pdf
 # Web2: http://lbesson.bitbucket.org/strapdown2pdf.html
 #
@@ -23,7 +23,7 @@
 #
 # Bugs / FIXME:
 #  1. I think it is way better now. Hack something to preserve LaTeX code verbatim between $ $ in the HTML initial document
-#     Example: http://javis/a/maths.html -> http://javis/a/maths.pdf works very well,
+#     Example: http://jarvis/a/maths.html -> http://jarvis/a/maths.pdf works very well,
 #     only for MathJax flavored maths formulas, which are all copied in the .tex with escaped $ and { : \{ and \$ every where :(
 #
 #
@@ -35,6 +35,7 @@ sign="false"
 keep="false"
 discrete="false"
 htm="false"
+nocolor="false"
 
 scale="0.85"
 policesize="11"
@@ -48,6 +49,12 @@ for arg in "$@"; do
  	 	-v|-version|--version)
 			echo -e "strapdown2pdf $version"
 			exit 0
+			;;
+		-n|-nocolor|--nocolor)
+			. ~/.nocolor.sh  # Disable ANSI colors code
+			echo -e "Running strapdown2pdf with option --nocolor, to disable ANSI colors in the output."
+			nocolor="true"
+			shift
 			;;
 		-h|-help|--help)
 			echo -e "${green}strapdown2pdf${white} -help | [options]"
@@ -67,8 +74,9 @@ for arg in "$@"; do
 			echo -e "    ${yellow}-[0-9][0-9]*pt${white}	change the default police size used by autotex (default is 11pt, '-10pt' or '-12pt' are good also) ${cyan}"'New!'
 			echo -e "    ${yellow}-k|-keep${white}		keep the intermediate .tex file. ${cyan}"'New!'
 			echo -e "    ${yellow}-s|-sign${white}		sign the produce PDF document with GnuPG (thanks to PDFCompress)."
+			echo -e "    ${yellow}-n|-nocolor${white}		remove ANSI colors from the output."
 			echo -e ""
-			echo -e "strapdown2pdf v$version : Copyrights: (c) Lilian Besson 2011-2014."
+			echo -e "strapdown2pdf v$version : Copyrights: (c) Lilian Besson 2011-2015."
 			echo -e "Released under the term of the GPL v3 Licence (more details on http://besson.qc.to/LICENSE.html)."
 			echo -e "In particular, strapdown2pdf is provided WITHOUT ANY WARANTY."
 			exit 0
@@ -220,14 +228,27 @@ StrapDown2PDF() {
 	fi
 
 	# Compile in batchmode it with autotex, to automatically add headers and packages stuff
-	${AUTOTEX} "${name}".tex
+	if [ "$nocolor" = "true" ]; then
+		${AUTOTEX} "${name}".tex | sed -r "s:\x1B\[[0-9;]*[mK]::g"
+	else
+		${AUTOTEX} "${name}".tex
+	fi
 
 	# Compress it (and even gpg sign it !)
-	if [ "$sign" = "true" ]; then
-		PDFCompress --sign "${name}".pdf
+	if [ "$nocolor" = "true" ]; then
+		if [ "$sign" = "true" ]; then
+			PDFCompress --sign "${name}".pdf | sed -r "s:\x1B\[[0-9;]*[mK]::g"
+		else
+			PDFCompress "${name}".pdf | sed -r "s:\x1B\[[0-9;]*[mK]::g"
+		fi
 	else
-		PDFCompress "${name}".pdf
+		if [ "$sign" = "true" ]; then
+			PDFCompress --sign "${name}".pdf
+		else
+			PDFCompress "${name}".pdf
+		fi
 	fi
+
 
 	# Clean up local repertory
 	mv -vf "${name}".tex* /tmp/
