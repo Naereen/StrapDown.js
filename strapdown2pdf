@@ -160,6 +160,9 @@ StrapDown2PDF() {
 	# Now we have a pure Markdown file (at least we hope)
 
 	title="$(grep -o -m 1 "<title>[^<]*</title>" "${input}" | grep -o ">.*<" | sed s/">"/""/ | sed s/"<"/""/)"
+	# New: if the title is not in the file, use the filename !
+	defaulttitle="$(echo -e "${name}" | tr _ ' ')"
+	title="${title:-$defaulttitle}"
 	echo -e "${cyan}I found this as a possible title${white} : $u${title}$U." | tee -a /tmp/strapdown2pdf.log
 
 	if [ X"${htm}" = "Xtrue" ]; then
