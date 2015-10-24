@@ -27,7 +27,7 @@
 #     only for MathJax flavored maths formulas, which are all copied in the .tex with escaped $ and { : \{ and \$ every where :(
 #
 #
-version='0.8'
+version='0.9'
 AUTOTEX="autotex batchmode"
 
 quiet="false"
@@ -37,7 +37,7 @@ discrete="false"
 htm="false"
 nocolor="false"
 
-scale="0.85"
+scale="0.82"
 policesize="11"
 
 # $OPTARG can contain the argument of the option k (if specified with hvk: or hk:v for example)
@@ -197,7 +197,7 @@ StrapDown2PDF() {
 	echo -e "%autotex% PoliceSize: ${policesize}" >> "${name}".tex
 
 	# We add the .tex file (it does NOT have any LaTeX headers)
-	# Apparently, I have been able to remove all weird espaced math LaTeX code in the input file ...
+	# Apparently, I have been able to remove all weird spaced math LaTeX code in the input file ...
 
 	# FIXME: here we should also try to improve the LaTeX math code preservation
 	cat "${name}".tex~ \
@@ -219,6 +219,7 @@ StrapDown2PDF() {
 		| sed s/'\([A-Za-z]\)_\([A-Za-z]\)'/'\1\\_\2'/g \
 		| sed s_'\(\\href{http[^}]*}\){\([^} ]*\.[^} ]*\)}'_'\1{\\texttt{\2}}'_g \
 		| sed s/'\(\\[a-z]*section\){'/'\1*{'/g \
+		| sed s/'\\_'/'_'/g \
 		>> "${name}".tex || exit 16
 		# FIXME Add '\([^}]*\)' between on the left and right on {\([^} ]*\.[^} ]*\)} after { and before } ?
 
