@@ -474,7 +474,8 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
     // renderer: new marked.Renderer(),
     gfm: true,  // Type: boolean Default: true. Enable [GitHub flavored markdown](https://help.github.com/articles/github-flavored-markdown).
     tables: true, // Type: boolean Default: true. Enable GFM tables. This option requires the gfm option to be true.
-    smartypants: true
+    smartypants: true,
+    pedantic: true  // See https://github.com/chuckhoupt/strapdown/commit/1a090729fb717059be0689aa65025de6de67b3cd
   });
   // Generate Markdown
   var html = marked(markdown);

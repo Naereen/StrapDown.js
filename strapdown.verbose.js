@@ -2059,7 +2059,8 @@ var prettyPrint;
   marked.setOptions({
     gfm : true,
     tables : true,
-    smartypants : true
+    smartypants : true,
+    pedantic: true
   });
   var html = marked(markdown);
   document.getElementById("content").innerHTML = html;
