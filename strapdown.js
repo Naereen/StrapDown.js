@@ -1,8 +1,9 @@
 /**
  * StrapDown.js - an on-the-fly markdown parser
- * Copyright (C) 2014, Lilian Besson. (GPLv3 Licensed)
+ * Copyright (C) 2015, Lilian Besson. (GPLv3 Licensed)
  * http://lbesson.bitbucket.org/md/
- * Version: 0.5
+ * https://GitHub.com/Naereen/StrapDown.js
+ * Version: 0.6
  */
 
 /**
@@ -448,7 +449,7 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   if (!navbarEl && titleEl) {
     newNode.innerHTML = '<div class="navbar-inner"> <div class="container"> <div id="headline" class="brand"> </div> '
 	    + '<div id="headline-copyrights" class="brand">('
-	    + '<a title="http://lbo.k.vu/md" href="http://lbesson.bitbucket.org/md/index.html?src=strapdown.js">StrapDown.js</a> v0.5, '
+	    + '<a title="http://lbo.k.vu/md" href="http://lbesson.bitbucket.org/md/index.html?src=strapdown.js">StrapDown.js</a> v0.6, '
 	    + 'theme <a title="More information on this theme on bootswatch.com!" href="http://bootswatch.com/'+theme+'">'+theme+'</a>, '
 	    + 'thanks to <a href="https://bitbucket.org/">BitBucket</a>)</div> '
 	    + '<div id="headline-squirt" class="brand"> <a title="Quick reader script! Check http://lbesson.bitbucket.org/squirt/ for more details" '
@@ -475,7 +476,8 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
     gfm: true,  // Type: boolean Default: true. Enable [GitHub flavored markdown](https://help.github.com/articles/github-flavored-markdown).
     tables: true, // Type: boolean Default: true. Enable GFM tables. This option requires the gfm option to be true.
     smartypants: true,
-    pedantic: true  // See https://github.com/chuckhoupt/strapdown/commit/1a090729fb717059be0689aa65025de6de67b3cd
+    pedantic: (queryOrigin['pedantic'] || false)
+    // See https://github.com/chuckhoupt/strapdown/commit/1a090729fb717059be0689aa65025de6de67b3cd
   });
   // Generate Markdown
   var html = marked(markdown);

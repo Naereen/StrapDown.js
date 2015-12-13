@@ -2060,7 +2060,7 @@ var prettyPrint;
     gfm : true,
     tables : true,
     smartypants : true,
-    pedantic: true
+    pedantic: (fmt['pedantic'] || false)
   });
   var html = marked(markdown);
   document.getElementById("content").innerHTML = html;
