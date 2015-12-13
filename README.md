@@ -32,7 +32,7 @@ More details on [http://lbesson.bitbucket.org/md/index.html](http://lbesson.bitb
 
 ----
 
-### And as any web-based document, a StrapDown.js powered HTML page can include any Javascript script, like this example which shows a research bar for a table: 
+### And as any web-based document, a StrapDown.js powered HTML page can include any Javascript script, like this example which shows a research bar for a table:
 ![Sixth demo](demo6.png "First lines of the index.html page")
 
 ----
@@ -45,7 +45,7 @@ More details on [http://lbesson.bitbucket.org/md/index.html](http://lbesson.bitb
  - [HTML 5](https://en.wikipedia.org/wiki/HTML) and [CSS 3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets).
 
 ### License
-This project is released under the **MIT license**, for more details,
-take a look at the [LICENSE](http://lbesson.mit-license.org/) file in the source.
+This project is released under the **GPLv3 license**, for more details,
+take a look at the [LICENSE](http://besson.qc.to/LICENSE.html) file in the source.
 
-[![Analytics](https://ga-beacon.appspot.com/UA-38514290-17/github.com/Naereen/StrapDown.js/README.md?pixel)](https://github.com/Naereen/StrapDown.js)
+*Basically, that allow you to use all or part of the project for you own business.*
