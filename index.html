@@ -9,7 +9,7 @@ to [HTML](https://en.wikipedia.org/wiki/HTML) [text processor](https://en.wikipe
  1. *Directly write your documents in Markdown*, and let the browser do the boring *compilation* steps,
  2. no need for CSS, theming or painful styling: *StrapDown.js* is already *friggin' beautiful*, and *responsive*,
  3. *quick* and *secure*, thanks to *GitHub* and their great SSL support. Note : You can also use [https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js](https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js) to load the script from a quick and secure (HTTPS-aware) CDN.
- 4. comes with many examples: <a href="example1.html" title="Example 1">first</a>, <a href="example2.html" title="Example 2">second</a>, <a href="example3.html" title="Example 3">third</a>, <a href="example4.html" title="Example 4">4th</a>, <a href="example5.html" title="Example 5">5th</a>, <a href="example6.html" title="Example 6">6th</a>, <a href="example7.html" title="Example 7">7th</a>..
+ 4. comes with many examples: <a href="example1.html" title="Example 1">first</a>, <a href="example2.html" title="Example 2">second</a>, <a href="example3.html" title="Example 3">third</a>, <a href="example4.html" title="Example 4">4th</a>, <a href="example5.html" title="Example 5">5th</a>, <a href="example6.html" title="Example 6">6th</a>, <a href="example7.html" title="Example 7">7th</a>...
  5. an almost perfect support for *text-only* browsers (as w3m, links, or elinks): *pure Markdown* is simpler to read than complicated HTML full of javascript, images (or worse),
  6. no external dependencies other than itself (and [MathJax](http://www.mathjax.org/) if you want to include it),
  7. no spying, no logging, no external leaking of your pages (and [Google Analytics with a 1px beacon image](http://perso.crans.org/besson/beacon.html) can be included with an option,
@@ -24,12 +24,12 @@ But there is also have a few things you need to know before using it:
  2. a reduced support for browsers *without javascript* or *with javascript disabled* (the pages are still readable, but really *ugly*),
  3. hosted on [GitHub](https://github.com/) and served by [rawgit](https://rawgit.com), which are wonderful but *might* not be always available.
 
-## Concretly
-Concretly, GitHub is [always](http://status.github.com/) *up*, *secured* and *quick* (oooh, and it is also awesome, completely free, and awesome too). Yeah, *is it so awesome* that I had to say it *twice*, you read it correctly!
+## Concretely
+Concretely, GitHub is [always](http://status.github.com/) *up*, *secured* and *quick* (oooh, and it is also awesome, completely free, and awesome too). Yeah, *is it so awesome* that I had to say it *twice*, you read it correctly!
 
 But if you prefer, feel free to download the project (with [StrapDown.js.zip](https://bitbucket.org/lbesson/lbesson.bitbucket.org/downloads/StrapDown.js.zip)) and upload it somewhere on your own server, or locally on your machine.
 
-As the script is hosted on [GitHub](https://github.com/Naereen/StrapDown.js/), it can be loaded *quickly* and *securely* from [cdn.rawgit.com](https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js)!
+As the script is hosted on [GitHub](https://github.com/Naereen/StrapDown.js/), it can be loaded *quickly* and *securely* from [cdn.rawgit.com](https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js): [https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js](https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js)!
 
 > ### A quick "thank you" to the [initial project](https://github.com/arturadib/strapdown/)
 > My version of StrapDown.js is a fork of [strapdownjs.com](http://strapdownjs.com), a cool project that [kinda seems dead by now](https://github.com/arturadib/strapdown/graphs/contributors).
@@ -123,7 +123,7 @@ with including a piece of Javascript code, before *or* after closing the *textar
   ga('create','UA-38514290-14','lbesson.bitbucket.org'); ga('send','pageview');
 </script>
 <noscript>
-  The previous parapraph was supposed to include Google Analytics web monitoring tool,
+  The previous paragraph was supposed to include Google Analytics web monitoring tool,
   but hey, you are browsing without JavaScript enabled, what can I do for it ? <br/>
   Maybe you are using a text-only browser (w3m, links, elinks ? I love elinks !),
   or a 19th-century IE, or maybe you disabled JavaScript globally (which is kinda stupid) or site-by-site (with NoScript, as I do, which is brilliant, and safer).
@@ -195,19 +195,14 @@ It has a perfect support for Markdown markup.
  - [This (English) translation of a French press article](http://perso.crans.org/besson/publis/10_10_2014__Liberation.en.html) about [Mahindra École Centrale](http://www.mahindraecolecentrale.edu.in/), nicely printed to [this PDF](http://perso.crans.org/besson/publis/10_10_2014__Liberation.en.pdf),
  - [This (English) translation of another French press article](http://perso.crans.org/besson/publis/29_10_2014__LeMonde.en.html) about the future [École Centrale Casablanca](http://www.centrale-casablanca.ma/site/home.html), nicely printed to [a PDF, quickly modified by hand to include an image](http://perso.crans.org/besson/publis/29_10_2014__LeMonde.en.pdf),
  - [This small (French) research report](http://perso.crans.org/besson/publis/PDE_09_2014/index.html) on a [non-linear Partial Differential Equation](https://en.wikipedia.org/wiki/Partial_differential_equations), nicely printed to [a PDF, with very good support of LaTeX](http://perso.crans.org/besson/publis/PDE_09_2014/index.pdf) ([since this modification](https://bitbucket.org/lbesson/bin/diff/strapdown2pdf?diff2=20fd4babc524&at=master)),
- - [This (French) homepage of a programming project](http://perso.crans.org/besson/agreg/m/2/) on [Euler theorems on Eulerian path](https://en.wikipedia.org/wiki/Eulerian_path#Properties). I did this as an assignement for [my M.Sc. of Computer Science in 2014](http://perso.crans.org/besson/cv.en.pdf), and it was also a good training for one oral exam of the [French national competitive examination to become a prep' school professor](https://en.wikipedia.org/wiki/Agr%C3%A9gation) in Mathematics and Computer Science (for [which I have been ranked 23rd among 795](http://web.archive.org/web/20140709144720/agreg.org/ResultatsMerite2014.html) in 2014!).
+ - [This (French) homepage of a programming project](http://perso.crans.org/besson/agreg/m/2/) on [Euler theorems on Eulerian path](https://en.wikipedia.org/wiki/Eulerian_path#Properties). I did this as an assignment for [my M.Sc. of Computer Science in 2014](http://perso.crans.org/besson/cv.en.pdf), and it was also a good training for one oral exam of the [French national competitive examination to become a prep' school professor](https://en.wikipedia.org/wiki/Agr%C3%A9gation) in Mathematics and Computer Science (for [which I have been ranked 23rd among 795](http://web.archive.org/web/20140709144720/agreg.org/ResultatsMerite2014.html) in 2014!).
 
 
-> You might also be interested by a way to make a StrapDown.js-powered document autonomous, ie. not using the script anymore. [I am working](https://bitbucket.org/lbesson/bin/history-node/master/strapdown2html.py) on a Python program [designed to do this (called, no surprise, strapdown2html.py)](https://bitbucket.org/lbesson/bin/str/master/strapdown2html.py). **Warning:** *Still being developped!*
+> You might also be interested by a way to make a StrapDown.js-powered document autonomous, ie. not using the script anymore. [I am working](https://bitbucket.org/lbesson/bin/history-node/master/strapdown2html.py) on a Python program [designed to do this (called, no surprise, strapdown2html.py)](https://bitbucket.org/lbesson/bin/str/master/strapdown2html.py).
 
 ---
 
 # Future features or ideas?
-- Improve the SSL certificate? As that screenshot shows, [SSL is available](https://lbesson.bitbucket.org/md/), but the certificate is not valid (it has been signed only for [bitbucket.org](https://bitbucket.org) and [www.bitbucket.org](https://www.bitbucket.org)):
-
-<a href="detail_SSL_certificate__24_11_2014.png" ><img style="align:center;margin-right:auto;margin-left:auto;display:block;" src="detail_SSL_certificate__24_11_2014.png" alt="Details of bitbucket.org SSL certificate" title="Details of bitbucket.org SSL certificate" width="70%" /></a>
-
-- Maybe host it on a [CDN](https://en.wikipedia.org/wiki/Content_delivery_network)?
 - Hack something to force using *local cached* version of the script and stylesheets rather than downloading them every time?
 - More "quick access" buttons on the top-navbar? (there is already a button to [use Squirt](http://lbesson.bitbucket.org/squirt) ([as shown in the example below](./SquirtFR_on_a_StrapDownJS_page.png)), one to [activate MathJax](http://www.mathjax.org), and one to [test a Google Analytics Beacon image](http://perso.crans.org/besson/beacon.en.html).)
 
