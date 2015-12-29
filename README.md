@@ -4,7 +4,7 @@
 ----
 
 ## Features
-**StrapDown.js** is already pretty advanced, as you can see by yourself with this very page (powered by StrapDown.js of course).
+**StrapDown.js** is already pretty advanced:
 
  1. *Directly write your documents in Markdown*, and let the browser do the boring *compilation* steps,
  2. no need for CSS, theming or painful styling: *StrapDown.js* is already *friggin' beautiful*, and *responsive*,
