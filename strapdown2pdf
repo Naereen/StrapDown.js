@@ -2,7 +2,7 @@
 # By: Lilian BESSON
 # Email: Lilian.BESSON[AT]ens-cachan[DOT]fr
 # Date: 24-10-2015
-# Web: http://besson.qc.to/bin/strapdown2pdf
+# Web: http://perso.crans.org/besson/bin/strapdown2pdf
 # Web2: http://lbesson.bitbucket.org/strapdown2pdf.html
 #
 # strapdown2pdf, a small script to simply convert a "StrapDown.js flavored"
@@ -12,14 +12,14 @@
 #
 # Requirements:
 #  + [lunamark](http://jgm.github.io/lunamark/lunamark.1.html)
-#  + [autotex](http://besson.qc.to/bin/autotex) (from my webpage),
-#  + [PDFCompress](http://besson.qc.to/bin/PDFCompress) (from my webpage),
-#  + [pdflatex](http://besson.qc.to/bin/pdflatex) (from my webpage).
+#  + [autotex](http://perso.crans.org/besson/bin/autotex) (from my webpage),
+#  + [PDFCompress](http://perso.crans.org/besson/bin/PDFCompress) (from my webpage),
+#  + [pdflatex](http://perso.crans.org/besson/bin/pdflatex) (from my webpage).
 #
 # References and more details:
 #  + [StrapDown.js](http://lbesson.bitbucket.org/md/)
 #
-# Licence: [GPLv3](http://besson.qc.to/LICENCE.html)
+# Licence: [GPLv3](http://perso.crans.org/besson/LICENCE.html)
 #
 # Bugs / FIXME:
 #  1. I think it is way better now. Hack something to preserve LaTeX code verbatim between $ $ in the HTML initial document
@@ -77,7 +77,7 @@ for arg in "$@"; do
 			echo -e "    ${yellow}-n|-nocolor${white}		remove ANSI colors from the output."
 			echo -e ""
 			echo -e "strapdown2pdf v$version : Copyrights: (c) Lilian Besson 2011-2015."
-			echo -e "Released under the term of the GPL v3 Licence (more details on http://besson.qc.to/LICENSE.html)."
+			echo -e "Released under the term of the GPL v3 Licence (more details on http://perso.crans.org/besson/LICENSE.html)."
 			echo -e "In particular, strapdown2pdf is provided WITHOUT ANY WARANTY."
 			exit 0
 			;;

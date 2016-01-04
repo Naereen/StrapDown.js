@@ -67,33 +67,33 @@ For instance, the following command will print to PDF every [StrapDown.js][]-fla
 >     -s|-sign            sign the produce PDF document with GnuPG (thanks to PDFCompress).
 > 
 > strapdown2pdf v0.8 : Copyrights: (c) Lilian Besson 2011-2014.
-> Released under the term of the GPL v3 Licence (more details on http://besson.qc.to/LICENSE.html).
+> Released under the term of the GPL v3 Licence (more details on http://perso.crans.org/besson/LICENSE.html).
 > In particular, strapdown2pdf is provided WITHOUT ANY WARANTY.
 > ```
 
 ### Options
 **strapdown2pdf** now comes with these options:
 
- + `-interactive` (shortcut is `-i`) to run [PDFLaTeX](http://besson.qc.to/bin/pdflatex) with the interactive (errorstopmode) mode (default is batchmode),
+ + `-interactive` (shortcut is `-i`) to run [PDFLaTeX](http://perso.crans.org/besson/bin/pdflatex) with the interactive (errorstopmode) mode (default is batchmode),
  + `-quiet` (shortcut is `-q`) to run [strapdown2pdf](http://lbesson.bitbucket.org/md/strapdown2pdf.html) in quiet mode (no output at all, everything is redirected to `/tmp/strapdown2pdf.log`),
  + `-htm` (shortcut is `-m`) to produce a simple HTML file (which do not use StrapDown.js, see [this example strapdown2pdf.htm](./strapdown2pdf.htm)), written to a .htm file. For important document, producing a .htm autonomous file is a good idea,
  + `-discrete` (shortcut is `-d`) to run strapdown2pdf is discrete mode, without adding any creditentials in the produced document,
  + `-s[0-9][0-9]*%` (e.g. `-79%`) to change the default scale used by autotex (default is 85%, '-70%', '-75%' or '-80%' are good also),
  + `-[0-9][0-9]*pt` (e.g. `-10pt`) to change the default police size used by autotex (default is 11pt, '-10pt' or '-12pt' are good also),
  + `-keep` (shortcut is `-k`) to keep the intermediate `.tex` file,
- + `-sign` (shortcut is `-s`) to sign the produce PDF document with GnuPG (thanks to [PDFCompress](http://besson.qc.to/bin/PDFCompress) option `--sign`).
+ + `-sign` (shortcut is `-s`) to sign the produce PDF document with GnuPG (thanks to [PDFCompress](http://perso.crans.org/besson/bin/PDFCompress) option `--sign`).
 
 ---
 
 ## Mandatory requirements
  + [lunamark](http://jgm.github.io/lunamark/lunamark.1.html) (an awesome *lua*-powered Markdown to LaTeX processor),
- + [autotex](http://besson.qc.to/bin/autotex) (from my web page, or from [bin/autotex](https://bitbucket.org/lbesson/bin/src/master/autotex)).
+ + [autotex](http://perso.crans.org/besson/bin/autotex) (from my web page, or from [bin/autotex](https://bitbucket.org/lbesson/bin/src/master/autotex)).
 
 ## Optionnal requirements
 These external scripts are not really mandatory, you could do without it by modifying a couple of lines of the script's code:
 
- + [PDFCompress](http://besson.qc.to/bin/PDFCompress) (from my web page, or from [bin/PDFCompress](https://bitbucket.org/lbesson/bin/src/master/PDFCompress)),
- + [pdflatex](http://besson.qc.to/bin/pdflatex) (from my web page, or from [bin/pdflatex](https://bitbucket.org/lbesson/bin/src/master/pdflatex)).
+ + [PDFCompress](http://perso.crans.org/besson/bin/PDFCompress) (from my web page, or from [bin/PDFCompress](https://bitbucket.org/lbesson/bin/src/master/PDFCompress)),
+ + [pdflatex](http://perso.crans.org/besson/bin/pdflatex) (from my web page, or from [bin/pdflatex](https://bitbucket.org/lbesson/bin/src/master/pdflatex)).
 
 ---
 
@@ -139,7 +139,7 @@ it could be possible to do the same for a "Compile to PDF with TeXLive" button !
 
 ### License
 This project is released under the **GPLv3 license**, for more details,
-take a look at the [LICENSE](http://besson.qc.to/LICENSE.html) file in the source.
+take a look at the [LICENSE](http://perso.crans.org/besson/LICENSE.html) file in the source.
 
 *Basically, that allow you to use all or part of the project for you own business.*
 
