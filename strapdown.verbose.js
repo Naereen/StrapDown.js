@@ -1820,9 +1820,9 @@ var prettyPrint;
   });
   var langHandlerRegistry = {};
   registerLangHandler(decorateSource, ["default-code"]);
-  registerLangHandler(createSimpleLexer([], [[PR_PLAIN, /^[^<?]+/], [PR_DECLARATION, /^<!\w[^>]*(?:>|$)/], [PR_COMMENT, /^<\!--[\s\S]*?(?:-\->|$)/], ["lang-", /^<\?([\s\S]+?)(?:\?>|$)/], ["lang-", /^<%([\s\S]+?)(?:%>|$)/], [PR_PUNCTUATION, /^(?:<[%?]|[%?]>)/], ["lang-", /^<xmp\b[^>]*>([\s\S]+?)<\/xmp\b[^>]*>/i], ["lang-js", /^<script\b[^>]*>([\s\S]*?)(<\/script\b[^>]*>)/i], ["lang-css", /^<style\b[^>]*>([\s\S]*?)(<\/style\b[^>]*>)/i], ["lang-in.tag", /^(<\/?[a-z][^<>]*>)/i]]), ["default-markup", 
+  registerLangHandler(createSimpleLexer([], [[PR_PLAIN, /^[^<?]+/], [PR_DECLARATION, /^<!\w[^>]*(?:>|$)/], [PR_COMMENT, /^<\!--[\s\S]*?(?:-\->|$)/], ["lang-", /^<\?([\s\S]+?)(?:\?>|$)/], ["lang-", /^<%([\s\S]+?)(?:%>|$)/], [PR_PUNCTUATION, /^(?:<[%?]|[%?]>)/], ["lang-", /^<xmp\b[^>]*>([\s\S]+?)<\/xmp\b[^>]*>/i], ["lang-js", /^<script\b[^>]*>([\s\S]*?)(<\/script\b[^>]*>)/i], ["lang-css", /^<style\b[^>]*>([\s\S]*?)(<\/style\b[^>]*>)/i], ["lang-in.tag", /^(<\/?[a-z][^<>]*>)/i]]), ["default-markup",
   "htm", "html", "mxml", "xhtml", "xml", "xsl"]);
-  registerLangHandler(createSimpleLexer([[PR_PLAIN, /^[\s]+/, null, " \t\r\n"], [PR_ATTRIB_VALUE, /^(?:\"[^\"]*\"?|\'[^\']*\'?)/, null, "\"'"]], [[PR_TAG, /^^<\/?[a-z](?:[\w.:-]*\w)?|\/?>$/i], [PR_ATTRIB_NAME, /^(?!style[\s=]|on)[a-z](?:[\w:-]*\w)?/i], ["lang-uq.val", /^=\s*([^>\'\"\s]*(?:[^>\'\"\s\/]|\/(?=\s)))/], [PR_PUNCTUATION, /^[=<>\/]+/], ["lang-js", /^on\w+\s*=\s*\"([^\"]+)\"/i], ["lang-js", /^on\w+\s*=\s*\'([^\']+)\'/i], ["lang-js", /^on\w+\s*=\s*([^\"\'>\s]+)/i], ["lang-css", /^style\s*=\s*\"([^\"]+)\"/i], 
+  registerLangHandler(createSimpleLexer([[PR_PLAIN, /^[\s]+/, null, " \t\r\n"], [PR_ATTRIB_VALUE, /^(?:\"[^\"]*\"?|\'[^\']*\'?)/, null, "\"'"]], [[PR_TAG, /^^<\/?[a-z](?:[\w.:-]*\w)?|\/?>$/i], [PR_ATTRIB_NAME, /^(?!style[\s=]|on)[a-z](?:[\w:-]*\w)?/i], ["lang-uq.val", /^=\s*([^>\'\"\s]*(?:[^>\'\"\s\/]|\/(?=\s)))/], [PR_PUNCTUATION, /^[=<>\/]+/], ["lang-js", /^on\w+\s*=\s*\"([^\"]+)\"/i], ["lang-js", /^on\w+\s*=\s*\'([^\']+)\'/i], ["lang-js", /^on\w+\s*=\s*([^\"\'>\s]+)/i], ["lang-css", /^style\s*=\s*\"([^\"]+)\"/i],
   ["lang-css", /^style\s*=\s*\'([^\']+)\'/i], ["lang-css", /^style\s*=\s*([^\"\'>\s]+)/i]]), ["in.tag"]);
   registerLangHandler(createSimpleLexer([], [[PR_ATTRIB_VALUE, /^[\s\S]+/]]), ["uq.val"]);
   registerLangHandler(sourceDecorator({
@@ -2042,11 +2042,17 @@ var prettyPrint;
   /** @type {Element} */
   newNode = document.createElement("div");
   /** @type {string} */
-  newNode.className = "navbar navbar-fixed-top";
+  if (fmt["nonavbarfixed"]) {
+    newNode.className = "navbar navbar-static-top";
+    document.body.style = "padding-top: 0px;"  /* XXX Experimental */
+  }
+  else {
+    newNode.className = "navbar navbar-fixed-top";
+  }
   if (!u && a) {
     /** @type {string} */
-    newNode.innerHTML = '<div class="navbar-inner"> <div class="container"> <div id="headline" class="brand"> </div> ' + '<div id="headline-copyrights" class="brand">(' + '<a title="http://lbo.k.vu/md" href="http://lbesson.bitbucket.org/md/index.html?src=strapdown.js">StrapDown.js</a> v0.5, ' + 'theme <a title="More information on this theme on bootswatch.com!" href="http://bootswatch.com/' + name + '">' + name + "</a>, " + 'thanks to <a href="https://bitbucket.org/">BitBucket</a>)</div> ' + 
-    '<div id="headline-squirt" class="brand"> <a title="Quick reader script! Check http://lbesson.bitbucket.org/squirt/ for more details" ' + "href=\"javascript:(function(){sq=window.sq;if(sq&&sq.closed){window.sq.closed&&window.document.dispatchEvent(new Event('squirt.again'));}else{sq=window.sq||{};sq.version='0.4';sq.host='http://lbesson.bitbucket.org/squirt';sq.j=document.createElement('script');sq.j.src=sq.host+'/squirt.js?src=strapdown.js';document.body.appendChild(sq.j);}})();\" " + ">SquirtFR?</a>" + " <a title=\"Import MathJax?\" href=\"javascript:(function(){ var scriptElMathJax = document.createElement('script'); scriptElMathJax.type = 'text/javascript'; scriptElMathJax.src = 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML&amp;locale=fr'; document.head.appendChild(scriptElMathJax); })();\" >MathJax?</a>" + 
+    newNode.innerHTML = '<div class="navbar-inner"> <div class="container"> <div id="headline" class="brand"> </div> ' + '<div id="headline-copyrights" class="brand">(' + '<a title="http://lbo.k.vu/md" href="http://lbesson.bitbucket.org/md/index.html?src=strapdown.js">StrapDown.js</a> v0.7, ' + 'theme <a title="More information on this theme on bootswatch.com!" href="http://bootswatch.com/' + name + '">' + name + "</a>, " + 'thanks to <a href="https://bitbucket.org/">BitBucket</a>)</div> ' +
+    '<div id="headline-squirt" class="brand"> <a title="Quick reader script! Check http://lbesson.bitbucket.org/squirt/ for more details" ' + "href=\"javascript:(function(){sq=window.sq;if(sq&&sq.closed){window.sq.closed&&window.document.dispatchEvent(new Event('squirt.again'));}else{sq=window.sq||{};sq.version='0.4';sq.host='http://lbesson.bitbucket.org/squirt';sq.j=document.createElement('script');sq.j.src=sq.host+'/squirt.js?src=strapdown.js';document.body.appendChild(sq.j);}})();\" " + ">SquirtFR?</a>" + " <a title=\"Import MathJax?\" href=\"javascript:(function(){ var scriptElMathJax = document.createElement('script'); scriptElMathJax.type = 'text/javascript'; scriptElMathJax.src = 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML&amp;locale=fr'; document.head.appendChild(scriptElMathJax); })();\" >MathJax?</a>" +
     " <a title=\"Fetch a beacon image?\" href=\"javascript:(function(){ var linkEl = document.createElement('img'); linkEl.alt = 'GA|Analytics'; linkEl.style = 'visibility: hidden; display: none;'; linkEl.src = 'http://perso.crans.org/besson/beacon/14/navbar/strapdown.js?pixel'; document.body.appendChild(linkEl); })();\">Beacon?</a>" + "</div> </div> </div>";
     document.body.insertBefore(newNode, document.body.firstChild);
     var h = a.innerHTML;

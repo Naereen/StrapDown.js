@@ -443,13 +443,19 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   newNode.id = 'content';
   document.body.replaceChild(newNode, markdownEl);
 
-  // Insert navbar if there's none // FIXME be sure THIS is good.
+  // Insert navbar if there's none // FIXED be sure this is good: OK
   var newNode = document.createElement('div');
-  newNode.className = 'navbar navbar-fixed-top';
+  if (queryOrigin['nonavbarfixed']) {
+    newNode.className = "navbar navbar-static-top";
+    document.body.style = "padding-top: 0px;"  /* XXX Experimental */
+  }
+  else {
+    newNode.className = "navbar navbar-fixed-top";
+  }
   if (!navbarEl && titleEl) {
     newNode.innerHTML = '<div class="navbar-inner"> <div class="container"> <div id="headline" class="brand"> </div> '
 	    + '<div id="headline-copyrights" class="brand">('
-	    + '<a title="http://lbo.k.vu/md" href="http://lbesson.bitbucket.org/md/index.html?src=strapdown.js">StrapDown.js</a> v0.6, '
+	    + '<a title="http://lbo.k.vu/md" href="http://lbesson.bitbucket.org/md/index.html?src=strapdown.js">StrapDown.js</a> v0.7, '
 	    + 'theme <a title="More information on this theme on bootswatch.com!" href="http://bootswatch.com/'+theme+'">'+theme+'</a>, '
 	    + 'thanks to <a href="https://bitbucket.org/">BitBucket</a>)</div> '
 	    + '<div id="headline-squirt" class="brand"> <a title="Quick reader script! Check http://lbesson.bitbucket.org/squirt/ for more details" '

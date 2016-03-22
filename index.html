@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><title>StrapDown.js on GitHub/Naereen/</title></head><body><xmp>
+<!DOCTYPE html><html><head><meta charset="utf-8"/><title>StrapDown.js on lbesson.bitbucket.org/md</title></head><body><xmp>
 # StrapDown.js
 **StrapDown.js** is an awesome **on-the-fly** [Markdown](https://en.wikipedia.org/wiki/Markdown)
 to [HTML](https://en.wikipedia.org/wiki/HTML) [text processor](https://en.wikipedia.org/wiki/Compiler).
@@ -8,13 +8,14 @@ to [HTML](https://en.wikipedia.org/wiki/HTML) [text processor](https://en.wikipe
 
  1. *Directly write your documents in Markdown*, and let the browser do the boring *compilation* steps,
  2. no need for CSS, theming or painful styling: *StrapDown.js* is already *friggin' beautiful*, and *responsive*,
- 3. *quick* and *secure*, thanks to *GitHub* and their great SSL support. Note : You can also use [https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js](https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js) to load the script from a quick and secure (HTTPS-aware) CDN.
- 4. comes with many examples: <a href="example1.html" title="Example 1">first</a>, <a href="example2.html" title="Example 2">second</a>, <a href="example3.html" title="Example 3">third</a>, <a href="example4.html" title="Example 4">4th</a>, <a href="example5.html" title="Example 5">5th</a>, <a href="example6.html" title="Example 6">6th</a>, <a href="example7.html" title="Example 7">7th</a>...
+ 3. *quick* and *secure*, thanks to *Bitbucket* and their SSL support (even if the certificate is not valid for [https://lbesson.bitbucket.org](https://lbesson.bitbucket.org), it is still secure),
+ 4. comes with many examples: <a href="example1.html" title="Example 1">first</a>, <a href="example2.html" title="Example 2">second</a>, <a href="example3.html" title="Example 3">third</a>, <a href="example4.html" title="Example 4">4th</a>, <a href="example5.html" title="Example 5">5th</a>, <a href="example6.html" title="Example 6">6th</a>, <a href="example7.html" title="Example 7">7th</a>, <a href="example8.html" title="Example 8">8th</a>...
  5. an almost perfect support for *text-only* browsers (as w3m, links, or elinks): *pure Markdown* is simpler to read than complicated HTML full of javascript, images (or worse),
  6. no external dependencies other than itself (and [MathJax](http://www.mathjax.org/) if you want to include it),
- 7. no spying, no logging, no external leaking of your pages (and [Google Analytics with a 1px beacon image](http://perso.crans.org/besson/beacon.html) can be included with an option,
+ 7. no spying, no logging, no external leaking of your pages (and [Google Analytics with a 1px beacon image](http://perso.crans.org/besson/beacon.html) can be included with an option, and unfortunately [rum.js from Bitbucket hosting server](https://confluence.atlassian.com/display/BITBUCKET/Publishing+a+Website+on+Bitbucket#PublishingaWebsiteonBitbucket-TechnicalFeaturesandLimitationsofthisFeature)),
  8. an excellent support of [*MathJax*](http://www.mathjax.org/), as shown in [this example](example3.html) or [that one](example5.html),
  9. and, the last but not the least, an *experimental* embedding of the awesome [SquirtFR](http://lbesson.bitbucket.org/squirt) bookmarklet to read *as quickly as Lucky Luke*.
+ 10. Note : You can also use [https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js](https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js) to have a true HTTPS support, by loading the script from a quick and secure (HTTPS-aware) CDN.
 
 
 ## Drawbacks?
@@ -22,14 +23,17 @@ But there is also have a few things you need to know before using it:
 
  1. It might get slow for *very long* pages, even if a **3000-line** document is handled very well and quickl ([you can test by yourself with this long document](3000.html)),
  2. a reduced support for browsers *without javascript* or *with javascript disabled* (the pages are still readable, but really *ugly*),
- 3. hosted on [GitHub](https://github.com/) and served by [rawgit](https://rawgit.com), which are wonderful but *might* not be always available.
+ 3. hosted on [Bitbucket](https://bitbucket.org/), which is wonderful but *might* not be always available (~ [3 hours of maintenance every 6 months](http://status.bitbucket.org/history), as shown with a small screenshot below).
+
+<a href="http://status.bitbucket.org/history"><img style="align:center;margin-right:auto;margin-left:auto;display:block;" src="bitbucket_maintenance.png" alt="Maintenance on Bitbucket.org" title="Bitbucket.org annoucing a short maintenance" width="70%" /></a>
 
 ## Concretely
-Concretely, GitHub is [always](http://status.github.com/) *up*, *secured* and *quick* (oooh, and it is also awesome, completely free, and awesome too). Yeah, *is it so awesome* that I had to say it *twice*, you read it correctly!
+Concretely, Bitbucket is [always](http://status.bitbucket.org/) *up*, *secured* and *quick* (oooh, and Bitbucket is also awesome, completely free, and awesome too). Yeah, *Bitbucket is so awesome* that I had to say it *twice*, you read it correctly!
 
 But if you prefer, feel free to download the project (with [StrapDown.js.zip](https://bitbucket.org/lbesson/lbesson.bitbucket.org/downloads/StrapDown.js.zip)) and upload it somewhere on your own server, or locally on your machine.
 
-As the script is hosted on [GitHub](https://github.com/Naereen/StrapDown.js/), it can be loaded *quickly* and *securely* from [cdn.rawgit.com](https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js): [https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js](https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js)!
+The script is also hosted on [GitHub](https://github.com/Naereen/StrapDown.js/) and so it can be loaded *quickly* and *securely* from [cdn.rawgit.com](https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js): [https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js](https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js)!
+
 
 > ### A quick "thank you" to the [initial project](https://github.com/arturadib/strapdown/)
 > My version of StrapDown.js is a fork of [strapdownjs.com](http://strapdownjs.com), a cool project that [kinda seems dead by now](https://github.com/arturadib/strapdown/graphs/contributors).
@@ -49,7 +53,7 @@ and then copy and paste the following 5 lines :
 ### Write here in Markdown rather than in HTML
 > This document is empty right now. Fill it out with awesome content !
 
-</textarea><script type="text/javascript" src="https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js"></script></body></html>
+</textarea><script type="text/javascript" src="http://lbesson.bitbucket.org/md/strapdown.min.js"></script></body></html>
 ```
 
 ### 2) [A first example](example1.html) *(you can click this to see it)*
@@ -63,7 +67,7 @@ You can now write your web page in Markdown.
 You opened a `textarea` tag, but a `xmp` tag works as well.
 
 And, yes, it is **as simple** as **one** HTML line at the beginning and **one** HTML line at the end of this document.
-</textarea><script type="text/javascript" src="https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js"></script></body></html>
+</textarea><script type="text/javascript" src="http://lbesson.bitbucket.org/md/strapdown.min.js"></script></body></html>
 ```
 
 ---
@@ -79,6 +83,7 @@ And, yes, it is **as simple** as **one** HTML line at the beginning and **one** 
 <li><a href="example5.html" title="Example 5">Example 5</a></li>
 <li><a href="example6.html" title="Example 6">Example 6</a></li>
 <li><a href="example7.html" title="Example 7">Example 7</a></li>
+<li><a href="example8.html" title="Example 8">Example 8</a></li>
 </ul>
 </div>
 
@@ -132,7 +137,7 @@ with including a piece of Javascript code, before *or* after closing the *textar
 
 ## That's it
 This was a brief overview, to show the basic use of [StrapDown.js](index.html).
-</textarea><script type="text/javascript" src="https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js"></script></body></html>
+</textarea><script type="text/javascript" src="http://lbesson.bitbucket.org/md/strapdown.min.js"></script></body></html>
 ```
 
 ### 4) More examples, with [MathJax](http://www.mathjax.org/) enabled
@@ -155,6 +160,7 @@ as shown in these three examples: [example n°3](example3.html) and [example n°
 <li><a href="example5.html" title="Example 5">Example 5</a></li>
 <li><a href="example6.html" title="Example 6">Example 6</a></li>
 <li><a href="example7.html" title="Example 7">Example 7</a></li>
+<li><a href="example8.html" title="Example 8">Example 8</a></li>
 </ul>
 </div>
 
@@ -166,16 +172,17 @@ There is now **18 different themes**, coming from [http://bootswatch.com/united]
  - cyborg, as used by the [first two examples](example1.html) (and a [demo on bootswatch.com/cyborg](http://bootswatch.com/cyborg)),
  - and united (as used [one this very page that you are reading](http://lbesson.bitbucket.org/md/index.html)!), inspired from [ubuntu](https://www.ubuntu.com/) (and a [demo on bootswatch.com/united](http://bootswatch.com/united)).
 
-I recently added some new themes, and now there is [these 9 new themes](https://github.com/Naereen/StrapDown.js/tree/master/themes#themes-for-strapdownjs).
+I recently added some new themes, and now there is [these 9 new themes](https://bitbucket.org/lbesson/lbesson.bitbucket.org/src/master/md/themes/).
 
 ---
 
 # Cloning the StrapDown.js project?
-As of now, StrapDown.js does **not** have it own git repository.
-And I don't want to, because it is *cleaner* to let it live on [http://lbesson.bitbucket.org/md](http://lbesson.bitbucket.org/md).
+```
+git clone https://github.com/Naereen/StrapDown.js
+```
 
 ### [A zip archive of the project](https://bitbucket.org/lbesson/lbesson.bitbucket.org/downloads/StrapDown.js.zip)
-But, there, you can easily download this *up-to-date* version of the *md* subdir of my [lbesson.bitbucket.org](https://bitbucket.org/lbesson/lbesson.bitbucket.org/src/master/md/) repository:
+You can also easily download this *up-to-date* version of the *md* subdir of my [lbesson.bitbucket.org](https://bitbucket.org/lbesson/lbesson.bitbucket.org/src/master/md/) repository:
 [StrapDown.js.zip](https://bitbucket.org/lbesson/lbesson.bitbucket.org/downloads/StrapDown.js.zip)
 (and [its PGP signature](https://bitbucket.org/lbesson/lbesson.bitbucket.org/downloads/StrapDown.js.zip.asc)).
 
@@ -199,6 +206,11 @@ It has a perfect support for Markdown markup.
 ---
 
 # Future features or ideas?
+- Improve the SSL certificate? As that screenshot shows, [SSL is available](https://lbesson.bitbucket.org/md/), but the certificate is not valid (it has been signed only for [bitbucket.org](https://bitbucket.org) and [www.bitbucket.org](https://www.bitbucket.org)):
+
+<a href="detail_SSL_certificate__24_11_2014.png" ><img style="align:center;margin-right:auto;margin-left:auto;display:block;" src="detail_SSL_certificate__24_11_2014.png" alt="Details of bitbucket.org SSL certificate" title="Details of bitbucket.org SSL certificate" width="70%" /></a>
+
+- Maybe host it on a [CDN](https://en.wikipedia.org/wiki/Content_delivery_network)?
 - Hack something to force using *local cached* version of the script and stylesheets rather than downloading them every time?
 - More "quick access" buttons on the top-navbar? (there is already a button to [use Squirt](http://lbesson.bitbucket.org/squirt) ([as shown in the example below](./SquirtFR_on_a_StrapDownJS_page.png)), one to [activate MathJax](http://www.mathjax.org), and one to [test a Google Analytics Beacon image](http://perso.crans.org/besson/beacon.en.html).)
 
@@ -217,6 +229,7 @@ It has a perfect support for Markdown markup.
 
 # About
 ### Forged by [Lilian Besson](http://perso.crans.org/besson/) ([lbesson on bitbucket](https://bitbucket.org/lbesson)).
+© 2013-2016
 
 ### Languages
  - [Markdown](https://en.wikipedia.org/wiki/Markdown);
@@ -224,6 +237,9 @@ It has a perfect support for Markdown markup.
  - [CSS 3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets).
 
 ### License
-This project is released under the **MIT license**, for more details, take a look at the [LICENSE](http://lbesson.mit-license.org/) file in the source.
+This project is released under the **GPLv3 license**, for more details,
+take a look at the [LICENSE](http://perso.crans.org/besson/LICENSE.html) file in the source.
 
-</xmp><script type="text/javascript" src="strapdown.min.js"></script></body></html>
+*Basically, that allow you to use all or part of the project for you own business.*
+
+</xmp><script type="text/javascript" src="strapdown.min.js?beacon=y"></script></body></html>
