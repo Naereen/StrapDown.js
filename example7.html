@@ -26,7 +26,8 @@ That search feature is working **incredibly well**, on the box below, if you sta
 <h3>Search on that table?</h3>
 <p>Thanks to the <a href="http://deuxhuithuit.github.io/quicksearch/">QuickSearch</a> <a href="https://www.jQuery.com/"><strong>jQuery</strong></a> <em>plug-in</em>.</p>
 <form><input class="form-control input-lg" type="text" name="search" value="" id="id_search" placeholder="Search on that table" autofocus />
-</form></div>
+</form>
+</div>
 
 # A partial list of the [Justice League of America](https://en.wikipedia.org/wiki/Justice_League)
 Here is an example of a table, displaying some *super heroes* ^^ <br>
@@ -87,9 +88,9 @@ Finally, after loading the two scripts (step 2), one line of JavaScript in enoug
 ```
 
 > More explanations? This Javascript line has three parts:
->  1. `$('input#id_search')` is using jQuery (the `$()` fonction) to select the DOM element of type `input` with `id=id_search` (id because of the `#`, it would be a class if `.`, like `div.navbar`),
->  2. `.quicksearch(...)` is calling the `quicksearch` fonction (available because QuickSearch has been registered as a jQuery plug-in), using it for that DOM element (the input search bar),
->  3. and finally we apply that fonction with the argument `'table tbody tr'`, which means that we initialize QuickSearch to look for all the `<table>` elements, only on their children `<tbody>` (content of the table), and only on the different lines (`<tr>`).
+>  1. `$('input#id_search')` is using jQuery (the `$()` function) to select the DOM element of type `input` with `id=id_search` (id because of the `#`, it would be a class if `.`, like `div.navbar`),
+>  2. `.quicksearch(...)` is calling the `quicksearch` function (available because QuickSearch has been registered as a jQuery plug-in), using it for that DOM element (the input search bar),
+>  3. and finally we apply that function with the argument `'table tbody tr'`, which means that we initialize QuickSearch to look for all the `<table>` elements, only on their children `<tbody>` (content of the table), and only on the different lines (`<tr>`).
 
 ---
 

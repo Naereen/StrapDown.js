@@ -426,10 +426,15 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   document.head.appendChild(linkEl);
 
   // Favicon (730 bytes for 'favicon.png')
-  var linkEl = document.createElement('link');
-  linkEl.rel = 'shortcut icon';
-  linkEl.href = originBase + '/favicon.png';
-  document.head.appendChild(linkEl);
+  if (queryOrigin['keepicon']) {
+    // Do not add a favicon, if strapdown.js was loaded with a URL query containing "&keepicon=y" somewhere.
+    console.log("[strapdown.js] [INFO] Keeping the default favicon (not replacing with originBase/favicon.png ...");
+  } else {
+    var linkEl = document.createElement('link');
+    linkEl.rel = 'shortcut icon';
+    linkEl.href = originBase + '/favicon.png';
+    document.head.appendChild(linkEl);
+  }
 
   //////////////////////////////////////////////////////////////////////
   //
@@ -446,8 +451,9 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   // Insert navbar if there's none // FIXED be sure this is good: OK
   var newNode = document.createElement('div');
   if (queryOrigin['nonavbarfixed']) {
+    // Ask for a non-fixed top navbar, if strapdown.js was loaded with a URL query containing "&nonavbarfixed=y" somewhere.
     newNode.className = "navbar navbar-static-top";
-    document.body.style = "padding-top: 0px;"  /* XXX Experimental */
+    document.body.style = "padding-top: 0px;"  /* FIXED manual fix */
   }
   else {
     newNode.className = "navbar navbar-fixed-top";

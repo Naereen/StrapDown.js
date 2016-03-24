@@ -2024,13 +2024,19 @@ var prettyPrint;
   /** @type {string} */
   node.href = path + "/themes/bootstrap-responsive.min.css";
   document.head.appendChild(node);
-  /** @type {Element} */
-  node = document.createElement("link");
-  /** @type {string} */
-  node.rel = "shortcut icon";
-  /** @type {string} */
-  node.href = path + "/favicon.png";
-  document.head.appendChild(node);
+  // Favicon (730 bytes for 'favicon.png')
+  if (fmt['keepicon']) {
+    // Do not add a favicon, if strapdown.js was loaded with a URL query containing "&keepicon=y" somewhere.
+    console.log("[strapdown.js] [INFO] Keeping the default favicon (not replacing with originBase/favicon.png ...");
+  } else {
+    /** @type {Element} */
+    node = document.createElement("link");
+    /** @type {string} */
+    node.rel = "shortcut icon";
+    /** @type {string} */
+    node.href = path + "/favicon.png";
+    document.head.appendChild(node);
+  }
   var markdown = markdownEl.textContent || markdownEl.innerText;
   /** @type {Element} */
   var newNode = document.createElement("div");
