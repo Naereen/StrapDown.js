@@ -9,7 +9,7 @@
  1. *Directly write your documents in Markdown*, and let the browser do the boring *compilation* steps,
  2. no need for CSS, theming or painful styling: *StrapDown.js* is already *friggin' beautiful*, and *responsive*,
  3. *quick* and *secure*, thanks to *GitHub* and their great SSL support. Note : You can also use [https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js](https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js) to load the script from a quick and secure (HTTPS-aware) CDN.
- 4. comes with many examples: <a href="example1.html" title="Example 1">first</a>, <a href="example2.html" title="Example 2">second</a>, <a href="example3.html" title="Example 3">third</a>, <a href="example4.html" title="Example 4">4th</a>, <a href="example5.html" title="Example 5">5th</a>, <a href="example6.html" title="Example 6">6th</a>, <a href="example7.html" title="Example 7">7th</a>, <a href="example8.html" title="Example 8">8th</a>...
+ 4. comes with many examples: [first](example1.html), [second](example2.html), [third](example3.html), [4th](example4.html), [5th](example5.html), [6th](example6.html), [7th](example7.html), [8th](example8.html), [9th](example9.html), [10th](example10.html)...
  5. an almost perfect support for *text-only* browsers (as w3m, links, or elinks): *pure Markdown* is simpler to read than complicated HTML full of javascript, images (or worse),
  6. no external dependencies other than itself (and [MathJax](http://www.mathjax.org/) if you want to include it),
  7. no spying, no logging, no external leaking of your pages (and [Google Analytics with a 1px beacon image](http://perso.crans.org/besson/beacon.html) can be included with an option,
