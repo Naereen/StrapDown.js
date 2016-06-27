@@ -3,7 +3,7 @@
 
 ----
 
-## Features
+## Features :dizzy:
 **StrapDown.js** is already pretty advanced:
 
  1. *Directly write your documents in Markdown*, and let the browser do the boring *compilation* steps,
@@ -17,7 +17,7 @@
  9. and, the last but not the least, an *experimental* embedding of the awesome [SquirtFR](http://lbesson.bitbucket.org/squirt) bookmarklet to read *as quickly as Lucky Luke*.
 
 
-## Drawbacks?
+## Drawbacks? :bug:
 But there is also have a few things you need to know before using it:
 
  1. It might get slow for *very long* pages, even if a **3000-line** document is handled very well and quickl ([you can test by yourself with this long document](3000.html)),
@@ -36,7 +36,7 @@ As the script is hosted on [GitHub](https://github.com/Naereen/StrapDown.js/), i
 
 ----
 
-## Examples
+## Examples :boom:
 ### Here is a first demo:
 ![First demo](demo1.png "First lines of the index.html page")
 
@@ -79,7 +79,7 @@ More details on [http://lbesson.bitbucket.org/md/index.html](http://lbesson.bitb
  - [JavaScript](https://en.wikipedia.org/wiki/Javascript),
  - [HTML 5](https://en.wikipedia.org/wiki/HTML) and [CSS 3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets).
 
-### License
+### :scroll: License
 This project is released under the **MIT license**, for more details, take a look at the [LICENSE](http://lbesson.mit-license.org/) file in the source.
 
 [![Analytics](https://ga-beacon.appspot.com/UA-38514290-17/github.com/Naereen/StrapDown.js/README.md?pixel)](https://github.com/Naereen/StrapDown.js)
