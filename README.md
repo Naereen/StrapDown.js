@@ -14,7 +14,9 @@
  6. no external dependencies other than itself (and [MathJax](http://www.mathjax.org/) if you want to include it),
  7. no spying, no logging, no external leaking of your pages (and [Google Analytics with a 1px beacon image](http://perso.crans.org/besson/beacon.html) can be included with an option,
  8. an excellent support of [*MathJax*](http://www.mathjax.org/), as shown in [this example](example3.html) or [that one](example5.html),
- 9. and, the last but not the least, an *experimental* embedding of the awesome [SquirtFR](http://lbesson.bitbucket.org/squirt) bookmarklet to read *as quickly as Lucky Luke*.
+ 9. quite lightweight: [![Only 32 Kb](https://badge-size.herokuapp.com/Naereen/StrapDown.js/master/strapdown.min.js)](https://github.com/Naereen/StrapDown.js/master/strapdown.min.js),
+ 10. and, the last but not the least, an *experimental* embedding of the awesome [SquirtFR](http://lbesson.bitbucket.org/squirt) bookmarklet to read *as quickly as Lucky Luke*.
+ 11. Note : You can also use [https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js](https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js) to have a true HTTPS support, by loading the script from a quick and secure (HTTPS-aware) CDN.
 
 
 ## Drawbacks? :bug:
