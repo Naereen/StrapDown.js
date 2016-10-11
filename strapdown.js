@@ -446,7 +446,7 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   var newNode = document.createElement('div');
   newNode.className = 'container';
   newNode.id = 'content';
-  document.body.replaceChild(newNode, markdownEl);
+  markdownEl.parentNode.replaceChild(newNode, markdownEl) || document.body.replaceChild(newNode, markdownEl);
 
   // Insert navbar if there's none // FIXED be sure this is good: OK
   var newNode = document.createElement('div');

@@ -2044,7 +2044,7 @@ var prettyPrint;
   newNode.className = "container";
   /** @type {string} */
   newNode.id = "content";
-  document.body.replaceChild(newNode, markdownEl);
+  markdownEl.parentNode.replaceChild(newNode, markdownEl) || document.body.replaceChild(newNode, markdownEl);
   /** @type {Element} */
   newNode = document.createElement("div");
   /** @type {string} */
