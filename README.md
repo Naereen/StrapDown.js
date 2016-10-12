@@ -84,4 +84,5 @@ More details on [http://lbesson.bitbucket.org/md/index.html](http://lbesson.bitb
 ### :scroll: License
 This project is released under the **MIT license**, for more details, take a look at the [LICENSE](http://lbesson.mit-license.org/) file in the source.
 
+[![Ask Me Anything](https://img.shields.io/badge/ask%20me-anything-1abc9c.svg)](https://github.com/Naereen/ama)
 [![Analytics](https://ga-beacon.appspot.com/UA-38514290-17/github.com/Naereen/StrapDown.js/README.md?pixel)](https://github.com/Naereen/StrapDown.js)
