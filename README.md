@@ -81,8 +81,19 @@ More details on [http://lbesson.bitbucket.org/md/index.html](http://lbesson.bitb
  - [JavaScript](https://en.wikipedia.org/wiki/Javascript),
  - [HTML 5](https://en.wikipedia.org/wiki/HTML) and [CSS 3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets).
 
-### :scroll: License
-This project is released under the **MIT license**, for more details, take a look at the [LICENSE](http://lbesson.mit-license.org/) file in the source.
+[![ForTheBadge uses-js](http://ForTheBadge.com/images/badges/uses-js.svg)](http://ForTheBadge.com)
+[![ForTheBadge uses-html](http://ForTheBadge.com/images/badges/uses-html.svg)](http://ForTheBadge.com)
+[![ForTheBadge uses-css](http://ForTheBadge.com/images/badges/uses-css.svg)](http://ForTheBadge.com)
 
-[![Ask Me Anything](https://img.shields.io/badge/ask%20me-anything-1abc9c.svg)](https://github.com/Naereen/ama)
-[![Analytics](https://ga-beacon.appspot.com/UA-38514290-17/github.com/Naereen/StrapDown.js/README.md?pixel)](https://github.com/Naereen/StrapDown.js)
+### :scroll: License ? [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
+[MIT Licensed](https://lbesson.mit-license.org/) (file [LICENSE.txt](LICENSE.txt)).
+© [Lilian Besson](https://GitHub.com/Naereen), 2015-16.
+
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
+[![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://GitHub.com/Naereen/ama)
+[![Analytics](https://ga-beacon.appspot.com/UA-38514290-17/github.com/Naereen/StrapDown.js/README.md?pixel)](https://GitHub.com/Naereen/StrapDown.js/)
+
+[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/Naereen/)
+
+[![ForTheBadge uses-badges](http://ForTheBadge.com/images/badges/uses-badges.svg)](http://ForTheBadge.com)
+[![ForTheBadge uses-git](http://ForTheBadge.com/images/badges/uses-git.svg)](https://GitHub.com/)
