@@ -1,0 +1,11 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><title>Test without Flash of Unstyled Code</title></head><body><xmp style="visibility:hidden;display:none;">
+# This is a test of a [StrapDown.js](http://lbesson.bitbucket.org/md/) powered webpage
+
+The only difference is I added a `style="visibility:hidden;display:none;"` attribute to the `<xmp>` tag containing the Markdown code.
+
+- *it's nice*, because for this page, the unstyled code (i.e., raw Markdown code) does not appear in the first second of the loading of the page,
+- but *it's not perfect*, as the page is fully empty on a text-only browser, or for browsers without javascript (or disabled javascript).
+
+
+> For more information, c.f., this [GitHub issue](https://github.com/Naereen/StrapDown.js/issues/2).
+</xmp><script type="text/javascript" src="//lbesson.bitbucket.org/md/strapdown.min.js"></script></body></html>
