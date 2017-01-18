@@ -15,7 +15,7 @@
  7. no spying, no logging, no external leaking of your pages (and [Google Analytics with a 1px beacon image](http://perso.crans.org/besson/beacon.html) can be included with an option,
  8. an excellent support of [*MathJax*](http://www.mathjax.org/), as shown in [this example](example3.html) or [that one](example5.html),
  9. quite lightweight: [![Only 32 Kb](https://badge-size.herokuapp.com/Naereen/StrapDown.js/master/strapdown.min.js)](https://github.com/Naereen/StrapDown.js/master/strapdown.min.js),
- 10. and, the last but not the least, an *experimental* embedding of the awesome [SquirtFR](http://lbesson.bitbucket.org/squirt) bookmarklet to read *as quickly as Lucky Luke*.
+ 10. and, the last but not the least, an *experimental* embedding of the awesome [SquirtFR](//lbesson.bitbucket.io/squirt) bookmarklet to read *as quickly as Lucky Luke*.
  11. Note : You can also use [https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js](https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js) to have a true HTTPS support, by loading the script from a quick and secure (HTTPS-aware) CDN.
 
 
@@ -44,7 +44,7 @@ As the script is hosted on [GitHub](https://github.com/Naereen/StrapDown.js/), i
 
 ----
 
-### [This page](http://lbesson.bitbucket.org/md/index.html) explains how to use StrapDown.js:
+### [This page](//lbesson.bitbucket.io/md/index.html) explains how to use StrapDown.js:
 ![Second demo](demo2.png "Demo of the demo!")
 
 ----
@@ -70,7 +70,7 @@ As the script is hosted on [GitHub](https://github.com/Naereen/StrapDown.js/), i
 ----
 
 ## More details
-More details on [http://lbesson.bitbucket.org/md/index.html](http://lbesson.bitbucket.org/md/index.html), with examples and extra explanations.
+More details on [//lbesson.bitbucket.io/md/index.html](//lbesson.bitbucket.io/md/index.html), with examples and extra explanations.
 
 ----
 

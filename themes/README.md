@@ -36,7 +36,7 @@ You can use them, of course, but I won't conclude them, I don't have time for th
 [StrapDown.js on GitHub](https://github.com/Naereen/StrapDown.js/tree/master/themes/), and [its demo page on naereen.github.io/](https://naereen.github.io/StrapDown.js/);
 
 ### On Bitbucket
-[StrapDown.js on Bitbucket](https://bitbucket.org/lbesson/lbesson.bitbucket.org/src/master/md/themes/), and [its demo page on lbesson.bitbucket.org/](http://lbesson.bitbucket.org/md/).
+[StrapDown.js on Bitbucket](https://bitbucket.org/lbesson/lbesson.bitbucket.org/src/master/md/themes/), and [its demo page on lbesson.bitbucket.io/](//lbesson.bitbucket.io/md/).
 
 ### Author | Maintainer
 [Lilian Besson](http://perso.crans.org/besson/) ([Naereen](https://github.com/Naereen)).

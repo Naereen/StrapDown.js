@@ -3,12 +3,12 @@
 # Email: Lilian.BESSON[AT]ens-cachan[DOT]fr
 # Date: 24-10-2015
 # Web: http://perso.crans.org/besson/bin/strapdown2pdf
-# Web2: http://lbesson.bitbucket.org/strapdown2pdf.html
+# Web2: http://lbesson.bitbucket.io/strapdown2pdf.html
 #
 # strapdown2pdf, a small script to simply convert a "StrapDown.js flavored"
 # HTML file (used to write with a Markdown syntax) to a PDF document.
 #
-# More details on http://lbesson.bitbucket.org/strapdown2pdf.html
+# More details on http://lbesson.bitbucket.io/strapdown2pdf.html
 #
 # Requirements:
 #  + [lunamark](http://jgm.github.io/lunamark/lunamark.1.html)
@@ -17,7 +17,7 @@
 #  + [pdflatex](http://perso.crans.org/besson/bin/pdflatex) (from my webpage).
 #
 # References and more details:
-#  + [StrapDown.js](http://lbesson.bitbucket.org/md/)
+#  + [StrapDown.js](//lbesson.bitbucket.io/md/)
 #
 # Licence: [GPLv3](http://perso.crans.org/besson/LICENCE.html)
 #
@@ -225,7 +225,7 @@ StrapDown2PDF() {
 
 	# And a final line to say "Compiled from HTML/MarkDown with StrapDown.js to PDF with ..."
 	if [ "$discrete" != "true" ]; then
-		echo -e "\n\n\n\n%% Added with strapdown2pdf\n\\\\hspace{\\\\fill}\n\\\\vfill{}\n\n\\\\hspace{\\\\fill}\\\\rule{.6\\\\linewidth}{0.4pt}\\\\hspace{\\\\fill}\n\n\\\\begin{quote}\n\\\\begin{footnotesize}\n (Compiled to \\\\textbf{PDF} from a \\\\texttt{HTML/Markdown} file (powered by \\\\href{http://lbesson.bitbucket.org/md/}{\\\\texttt{StrapDown.js}}) with \\\\textbf{\\\\href{http://lbesson.bitbucket.org/md/strapdown2pdf.html}{strapdown2pdf}}, \\\\texttt{v${version}}.)\n\\\\end{footnotesize}\n\\\\end{quote}\n"  >> "${name}".tex
+		echo -e "\n\n\n\n%% Added with strapdown2pdf\n\\\\hspace{\\\\fill}\n\\\\vfill{}\n\n\\\\hspace{\\\\fill}\\\\rule{.6\\\\linewidth}{0.4pt}\\\\hspace{\\\\fill}\n\n\\\\begin{quote}\n\\\\begin{footnotesize}\n (Compiled to \\\\textbf{PDF} from a \\\\texttt{HTML/Markdown} file (powered by \\\\href{//lbesson.bitbucket.io/md/}{\\\\texttt{StrapDown.js}}) with \\\\textbf{\\\\href{//lbesson.bitbucket.io/md/strapdown2pdf.html}{strapdown2pdf}}, \\\\texttt{v${version}}.)\n\\\\end{footnotesize}\n\\\\end{quote}\n"  >> "${name}".tex
 	fi
 
 	# Compile in batchmode it with autotex, to automatically add headers and packages stuff

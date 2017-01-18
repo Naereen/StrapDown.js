@@ -1,7 +1,7 @@
 /**
  * StrapDown.js - an on-the-fly markdown parser
  * Copyright (C) 2016, Lilian Besson. (GPLv3 Licensed)
- * http://lbesson.bitbucket.org/md/
+ * http://lbesson.bitbucket.io/md/
  * https://GitHub.com/Naereen/StrapDown.js
  * Version: 0.8
  */
@@ -461,11 +461,11 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   if (!navbarEl && titleEl) {
     newNode.innerHTML = '<div class="navbar-inner"> <div class="container"> <div id="headline" class="brand"> </div> '
 	    + '<div id="headline-copyrights" class="brand">('
-	    + '<a title="http://lbo.k.vu/md" href="http://lbesson.bitbucket.org/md/index.html?src=strapdown.js">StrapDown.js</a> v0.8, '
+	    + '<a title="http://lbo.k.vu/md" href="//lbesson.bitbucket.io/md/index.html?src=strapdown.js">StrapDown.js</a> v0.8, '
 	    + 'theme <a title="More information on this theme on bootswatch.com!" href="http://bootswatch.com/'+theme+'">'+theme+'</a>, '
 	    + 'thanks to <a href="https://bitbucket.org/">BitBucket</a>)</div> '
-	    + '<div id="headline-squirt" class="brand"> <a title="Quick reader script! Check http://lbesson.bitbucket.org/squirt/ for more details" '
-	    + 'href="javascript:(function(){sq=window.sq;if(sq&&sq.closed){window.sq.closed&&window.document.dispatchEvent(new Event(\'squirt.again\'));}else{sq=window.sq||{};sq.version=\'0.4\';sq.host=\'http://lbesson.bitbucket.org/squirt\';sq.j=document.createElement(\'script\');sq.j.src=sq.host+\'/squirt.js?src=strapdown.js\';document.body.appendChild(sq.j);}})();" '
+	    + '<div id="headline-squirt" class="brand"> <a title="Quick reader script! Check http://lbesson.bitbucket.io/squirt/ for more details" '
+	    + 'href="javascript:(function(){sq=window.sq;if(sq&&sq.closed){window.sq.closed&&window.document.dispatchEvent(new Event(\'squirt.again\'));}else{sq=window.sq||{};sq.version=\'0.4\';sq.host=\'//lbesson.bitbucket.io/squirt\';sq.j=document.createElement(\'script\');sq.j.src=sq.host+\'/squirt.js?src=strapdown.js\';document.body.appendChild(sq.j);}})();" '
 	    + '>SquirtFR?</a>'
         // var scriptElMathJax = document.createElement(\'script\'); scriptElMathJax.type = \'text/x-mathjax-config\'; scriptElMathJax.innerHTML = \'MathJax.Hub.Config({ tex2jax: { inlineMath: [[\\\'$\\\',\\\'$\\\']], displayMath: [ [\\\'$$\\\',\\\'$$\\\'] ], processEscapes: false } });\'; document.body.appendChild(scriptElMathJax);
         + ' <a title="Import MathJax?" href="javascript:(function(){ var scriptElMathJax = document.createElement(\'script\'); scriptElMathJax.type = \'text/javascript\'; scriptElMathJax.src = \'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML&amp;locale=fr\'; document.head.appendChild(scriptElMathJax); })();" >MathJax?</a>'
