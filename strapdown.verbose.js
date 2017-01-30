@@ -2058,8 +2058,8 @@ var prettyPrint;
   if (!u && a) {
     /** @type {string} */
     newNode.innerHTML = '<div class="navbar-inner"> <div class="container"> <div id="headline" class="brand"> </div> ' + '<div id="headline-copyrights" class="brand">(' + '<a title="http://lbo.k.vu/md" href="//lbesson.bitbucket.io/md/index.html?src=strapdown.js">StrapDown.js</a> v0.8, ' + 'theme <a title="More information on this theme on bootswatch.com!" href="http://bootswatch.com/' + name + '">' + name + "</a>, " + 'thanks to <a href="https://bitbucket.org/">BitBucket</a>)</div> ' +
-    '<div id="headline-squirt" class="brand"> <a title="Quick reader script! Check http://lbesson.bitbucket.io/squirt/ for more details" ' + "href=\"javascript:(function(){sq=window.sq;if(sq&&sq.closed){window.sq.closed&&window.document.dispatchEvent(new Event('squirt.again'));}else{sq=window.sq||{};sq.version='0.4';sq.host='//lbesson.bitbucket.io/squirt';sq.j=document.createElement('script');sq.j.src=sq.host+'/squirt.js?src=strapdown.js';document.body.appendChild(sq.j);}})();\" " + ">SquirtFR?</a>" + " <a title=\"Import MathJax?\" href=\"javascript:(function(){ var scriptElMathJax = document.createElement('script'); scriptElMathJax.type = 'text/javascript'; scriptElMathJax.src = 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML&amp;locale=fr'; document.head.appendChild(scriptElMathJax); })();\" >MathJax?</a>" +
-    " <a title=\"Fetch a beacon image?\" href=\"javascript:(function(){ var linkEl = document.createElement('img'); linkEl.alt = 'GA|Analytics'; linkEl.style = 'visibility: hidden; display: none;'; linkEl.src = 'http://perso.crans.org/besson/beacon/14/navbar/strapdown.js?pixel'; document.body.appendChild(linkEl); })();\">Beacon?</a>" + "</div> </div> </div>";
+    '<div id="headline-squirt" class="brand"> <a title="Quick reader script! Check //lbesson.bitbucket.io/squirt/ for more details" ' + "href=\"javascript:(function(){sq=window.sq;if(sq&&sq.closed){window.sq.closed&&window.document.dispatchEvent(new Event('squirt.again'));}else{sq=window.sq||{};sq.version='0.4';sq.host='//lbesson.bitbucket.io/squirt';sq.j=document.createElement('script');sq.j.src=sq.host+'/squirt.js?src=strapdown.js';document.body.appendChild(sq.j);}})();\" " + ">SquirtFR?</a>" + " <a title=\"Import MathJax?\" href=\"javascript:(function(){ var scriptElMathJax = document.createElement('script'); scriptElMathJax.type = 'text/javascript'; scriptElMathJax.src = 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML&amp;locale=fr'; document.head.appendChild(scriptElMathJax); })();\" >MathJax?</a>" +
+    " <a title=\"Fetch a beacon image?\" href=\"javascript:(function(){ var linkEl = document.createElement('img'); linkEl.alt = 'GA|Analytics'; linkEl.style = 'visibility: hidden; display: none;'; linkEl.src = 'https://perso.crans.org/besson/beacon/14/navbar/strapdown.js?pixel'; document.body.appendChild(linkEl); })();\">Beacon?</a>" + "</div> </div> </div>";
     if (!(fmt["nonavbarfixed"])) {
       document.body.insertBefore(newNode, document.body.firstChild);
     }
@@ -2128,7 +2128,7 @@ var prettyPrint;
     /** @type {string} */
     node.style = "visibility: hidden; display: none;";
     /** @type {string} */
-    node.src = "http://perso.crans.org/besson/beacon/14/query/strapdown.js?pixel";
+    node.src = "https://perso.crans.org/besson/beacon/14/query/strapdown.js?pixel";
     document.body.appendChild(node);
   }
 })(window, document);

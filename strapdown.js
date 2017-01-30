@@ -1,7 +1,7 @@
 /**
  * StrapDown.js - an on-the-fly markdown parser
  * Copyright (C) 2016, Lilian Besson. (GPLv3 Licensed)
- * http://lbesson.bitbucket.io/md/
+ * //lbesson.bitbucket.io/md/
  * https://GitHub.com/Naereen/StrapDown.js
  * Version: 0.8
  */
@@ -374,7 +374,7 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   }
   var originBase = origin.substr(0, origin.lastIndexOf('/'));
 
-  // origin = http://0.0.0.0/s/md/strapdown.js?src=source.html&mathjax=y&beacon=y&theme=cyborg is the complete address
+  // origin = https://0.0.0.0/s/md/strapdown.js?src=source.html&mathjax=y&beacon=y&theme=cyborg is the complete address
 
     function searchURL(myURL) { // Source: http://www.abeautifulsite.net/parsing-urls-in-javascript/
         var parserForURL = document.createElement('a'),
@@ -464,12 +464,12 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
 	    + '<a title="http://lbo.k.vu/md" href="//lbesson.bitbucket.io/md/index.html?src=strapdown.js">StrapDown.js</a> v0.8, '
 	    + 'theme <a title="More information on this theme on bootswatch.com!" href="http://bootswatch.com/'+theme+'">'+theme+'</a>, '
 	    + 'thanks to <a href="https://bitbucket.org/">BitBucket</a>)</div> '
-	    + '<div id="headline-squirt" class="brand"> <a title="Quick reader script! Check http://lbesson.bitbucket.io/squirt/ for more details" '
+	    + '<div id="headline-squirt" class="brand"> <a title="Quick reader script! Check //lbesson.bitbucket.io/squirt/ for more details" '
 	    + 'href="javascript:(function(){sq=window.sq;if(sq&&sq.closed){window.sq.closed&&window.document.dispatchEvent(new Event(\'squirt.again\'));}else{sq=window.sq||{};sq.version=\'0.4\';sq.host=\'//lbesson.bitbucket.io/squirt\';sq.j=document.createElement(\'script\');sq.j.src=sq.host+\'/squirt.js?src=strapdown.js\';document.body.appendChild(sq.j);}})();" '
 	    + '>SquirtFR?</a>'
         // var scriptElMathJax = document.createElement(\'script\'); scriptElMathJax.type = \'text/x-mathjax-config\'; scriptElMathJax.innerHTML = \'MathJax.Hub.Config({ tex2jax: { inlineMath: [[\\\'$\\\',\\\'$\\\']], displayMath: [ [\\\'$$\\\',\\\'$$\\\'] ], processEscapes: false } });\'; document.body.appendChild(scriptElMathJax);
         + ' <a title="Import MathJax?" href="javascript:(function(){ var scriptElMathJax = document.createElement(\'script\'); scriptElMathJax.type = \'text/javascript\'; scriptElMathJax.src = \'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML&amp;locale=fr\'; document.head.appendChild(scriptElMathJax); })();" >MathJax?</a>'
-        + ' <a title="Fetch a beacon image?" href="javascript:(function(){ var linkEl = document.createElement(\'img\'); linkEl.alt = \'GA|Analytics\'; linkEl.style = \'visibility: hidden; display: none;\'; linkEl.src = \'http://perso.crans.org/besson/beacon/14/navbar/strapdown.js?pixel\'; document.body.appendChild(linkEl); })();">Beacon?</a>' // https://ga-beacon.appspot.com/UA-38514290-14/
+        + ' <a title="Fetch a beacon image?" href="javascript:(function(){ var linkEl = document.createElement(\'img\'); linkEl.alt = \'GA|Analytics\'; linkEl.style = \'visibility: hidden; display: none;\'; linkEl.src = \'https://perso.crans.org/besson/beacon/14/navbar/strapdown.js?pixel\'; document.body.appendChild(linkEl); })();">Beacon?</a>' // https://ga-beacon.appspot.com/UA-38514290-14/
         + '</div> </div> </div>';
     if (!(queryOrigin['nonnavbar'])) {
         document.body.insertBefore(newNode, document.body.firstChild);
@@ -516,7 +516,7 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   // All done - show body
   document.body.style.display = '';
 
-  // MathJax configuration (http://docs.mathjax.org/en/latest/configuration.html#configuring-mathjax-after-it-is-loaded)
+  // MathJax configuration (https://docs.mathjax.org/en/latest/configuration.html#configuring-mathjax-after-it-is-loaded)
   var scriptElMathJax = document.createElement('script');
   scriptElMathJax.type = 'text/x-mathjax-config';
   scriptElMathJax.innerHTML = 'MathJax.Hub.Config({ tex2jax: { inlineMath: [[\'$\',\'$\']], displayMath: [ [\'$$\',\'$$\']], processEscapes: true } });';
@@ -536,7 +536,7 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
     var linkEl = document.createElement('img');
     linkEl.alt = 'GA|Analytics';
     linkEl.style = 'visibility: hidden; display: none;';
-    linkEl.src = 'http://perso.crans.org/besson/beacon/14/query/strapdown.js?pixel'; /* https://ga-beacon.appspot.com/UA-38514290-14 */
+    linkEl.src = 'https://perso.crans.org/besson/beacon/14/query/strapdown.js?pixel'; /* https://ga-beacon.appspot.com/UA-38514290-14 */
     document.body.appendChild(linkEl);
   }
 
