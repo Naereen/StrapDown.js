@@ -468,7 +468,7 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
 	    + 'href="javascript:(function(){sq=window.sq;if(sq&&sq.closed){window.sq.closed&&window.document.dispatchEvent(new Event(\'squirt.again\'));}else{sq=window.sq||{};sq.version=\'0.4\';sq.host=\'//lbesson.bitbucket.io/squirt\';sq.j=document.createElement(\'script\');sq.j.src=sq.host+\'/squirt.js?src=strapdown.js\';document.body.appendChild(sq.j);}})();" '
 	    + '>SquirtFR?</a>'
         // var scriptElMathJax = document.createElement(\'script\'); scriptElMathJax.type = \'text/x-mathjax-config\'; scriptElMathJax.innerHTML = \'MathJax.Hub.Config({ tex2jax: { inlineMath: [[\\\'$\\\',\\\'$\\\']], displayMath: [ [\\\'$$\\\',\\\'$$\\\'] ], processEscapes: false } });\'; document.body.appendChild(scriptElMathJax);
-        + ' <a title="Import MathJax?" href="javascript:(function(){ var scriptElMathJax = document.createElement(\'script\'); scriptElMathJax.type = \'text/javascript\'; scriptElMathJax.src = \'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML&amp;locale=fr\'; document.head.appendChild(scriptElMathJax); })();" >MathJax?</a>'
+        + ' <a title="Import MathJax?" href="javascript:(function(){ var scriptElMathJax = document.createElement(\'script\'); scriptElMathJax.type = \'text/javascript\'; scriptElMathJax.src = \'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML&amp;locale=fr\'; document.head.appendChild(scriptElMathJax); })();" >MathJax?</a>'
         + ' <a title="Fetch a beacon image?" href="javascript:(function(){ var linkEl = document.createElement(\'img\'); linkEl.alt = \'GA|Analytics\'; linkEl.style = \'visibility: hidden; display: none;\'; linkEl.src = \'https://perso.crans.org/besson/beacon/14/navbar/strapdown.js?pixel\'; document.body.appendChild(linkEl); })();">Beacon?</a>' // https://ga-beacon.appspot.com/UA-38514290-14/
         + '</div> </div> </div>';
     if (!(queryOrigin['nonnavbar'])) {
@@ -526,7 +526,7 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   if ( queryOrigin['mathjax'] ) {
     var scriptElMathJax = document.createElement('script');
     scriptElMathJax.type = 'text/javascript';
-    scriptElMathJax.src = 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML&amp;locale=fr';
+    scriptElMathJax.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML&amp;locale=fr';
     document.head.appendChild(scriptElMathJax);
   }
 
