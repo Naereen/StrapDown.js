@@ -8,7 +8,7 @@
 
  1. *Directly write your documents in Markdown*, and let the browser do the boring *compilation* steps,
  2. no need for CSS, theming or painful styling: *StrapDown.js* is already *friggin' beautiful*, and *responsive*,
- 3. *quick* and *secure*, thanks to *GitHub* and their great SSL support. Note : You can also use [https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js](https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js) to load the script from a quick and secure (HTTPS-aware) CDN.
+ 3. *quick* and *secure*, thanks to *GitHub* and their great SSL support. Note : You can also use [https://cdn.jsdelivr.net/gh/Naereen/StrapDown.js@master/strapdown.min.js](https://cdn.jsdelivr.net/gh/Naereen/StrapDown.js@master/strapdown.min.js) to load the script from a quick and secure (HTTPS-aware) CDN.
  4. comes with many examples: [first](example1.html), [second](example2.html), [third](example3.html), [4th](example4.html), [5th](example5.html), [6th](example6.html), [7th](example7.html), [8th](example8.html), [9th](example9.html), [10th](example10.html)...
  5. an almost perfect support for *text-only* browsers (as w3m, links, or elinks): *pure Markdown* is simpler to read than complicated HTML full of javascript, images (or worse),
  6. no external dependencies other than itself (and [MathJax](http://www.mathjax.org/) if you want to include it),
@@ -16,7 +16,7 @@
  8. an excellent support of [*MathJax*](http://www.mathjax.org/), as shown in [this example](example3.html) or [that one](example5.html),
  9. quite lightweight: [![Only 32 Kb](https://badge-size.herokuapp.com/Naereen/StrapDown.js/master/strapdown.min.js)](https://github.com/Naereen/StrapDown.js/master/strapdown.min.js),
  10. and, the last but not the least, an *experimental* embedding of the awesome [SquirtFR](//lbesson.bitbucket.io/squirt) bookmarklet to read *as quickly as Lucky Luke*.
- 11. Note : You can also use [https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js](https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js) to have a true HTTPS support, by loading the script from a quick and secure (HTTPS-aware) CDN.
+ 11. Note : You can also use [https://cdn.jsdelivr.net/gh/Naereen/StrapDown.js@master/strapdown.min.js](https://cdn.jsdelivr.net/gh/Naereen/StrapDown.js@master/strapdown.min.js) to have a true HTTPS support, by loading the script from a quick and secure (HTTPS-aware) CDN.
 
 
 ## Drawbacks? :bug:
@@ -24,14 +24,14 @@ But there is also have a few things you need to know before using it:
 
  1. It might get slow for *very long* pages, even if a **3000-line** document is handled very well and quickl ([you can test by yourself with this long document](3000.html)),
  2. a reduced support for browsers *without javascript* or *with javascript disabled* (the pages are still readable, but really *ugly*),
- 3. hosted on [GitHub](https://github.com/) and served by [rawgit](https://rawgit.com), which are wonderful but *might* not be always available.
+ 3. hosted on [GitHub](https://github.com/) and served by [JsDelivr](https://JsDelivr.com), which are wonderful but *might* not be always available.
 
 ## Concretely
 Concretely, GitHub is [always](http://status.github.com/) *up*, *secured* and *quick* (oooh, and it is also awesome, completely free, and awesome too). Yeah, *is it so awesome* that I had to say it *twice*, you read it correctly!
 
 But if you prefer, feel free to download the project (with [StrapDown.js.zip](https://bitbucket.org/lbesson/lbesson.bitbucket.org/downloads/StrapDown.js.zip)) and upload it somewhere on your own server, or locally on your machine.
 
-As the script is hosted on [GitHub](https://github.com/Naereen/StrapDown.js/), it can be loaded *quickly* and *securely* from [cdn.rawgit.com](https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js): [https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js](https://cdn.rawgit.com/Naereen/StrapDown.js/master/strapdown.min.js)!
+As the script is hosted on [GitHub](https://github.com/Naereen/StrapDown.js/), it can be loaded *quickly* and *securely* from [cdn.JsDelivr.com](https://cdn.jsdelivr.net/gh/Naereen/StrapDown.js@master/strapdown.min.js): [https://cdn.jsdelivr.net/gh/Naereen/StrapDown.js@master/strapdown.min.js](https://cdn.jsdelivr.net/gh/Naereen/StrapDown.js@master/strapdown.min.js)!
 
 > ### A quick "thank you" to the [initial project](https://github.com/arturadib/strapdown/)
 > My version of StrapDown.js is a fork of [strapdownjs.com](http://strapdownjs.com), a cool project that [kinda seems dead by now](https://github.com/arturadib/strapdown/graphs/contributors).
