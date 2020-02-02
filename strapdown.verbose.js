@@ -116,7 +116,7 @@
     } catch (ex) {
       ex.message += "\nPlease report this to https://github.com/chjj/marked.";
       if ((opt || marked.defaults).silent) {
-        return "An error occured:\n" + ex.message;
+        return "An error occurred:\n" + ex.message;
       }
       throw ex;
     }
