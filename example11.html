@@ -11,7 +11,7 @@ See this [issue #9](https://GitHub.com/Naereen/StrapDown.js/issues/9) on the Git
 ### 1st try: using backticks with no escape:
 
 Inline equations, as for instance the classic `Delta = b^2-4ac` and
-`x_(1,2) = (-b pm sqrt Delta)(2a)`, or display equations as this one :
+`x_(1,2) = (-b pm sqrt Delta)/(2a)`, or display equations as this one :
 $$ J_(alpha)(x) = sum_(m=0)^(oo) ((-1)^m)/(m! Gamma(m + alpha + 1) (x/2)^(2 m + alpha) $$
 
 **It fails**, as backticks are first interpreted as Markdown code for inline code, and the Markdown parser of StrapDown.js converts to HTML *before* MathJax loads in and can try to convert the code to maths.
@@ -20,7 +20,7 @@ $$ J_(alpha)(x) = sum_(m=0)^(oo) ((-1)^m)/(m! Gamma(m + alpha + 1) (x/2)^(2 m + 
 ### 2nd try: using backticks with escape (it works):
 
 Inline equations, as for instance the classic \`Delta = b^2-4ac\` and
-\`x\_(1,2) = (-b pm sqrt Delta)(2a)\`, or display equations as this one :
+\`x\_(1,2) = (-b pm sqrt Delta)/(2a)\`, or display equations as this one :
 
 ```AsciiMath
 J\_(alpha)(x) = sum\_(m=0)^(oo) ((-1)^m)/(m! Gamma(m + alpha + 1) (x/2)^(2 m + alpha)
@@ -32,7 +32,7 @@ Inline equations **work** but display equations **do not work**.
 ### Also using dollar sign as delimiter?
 
 Let's see: $\Delta^2 - 4ac$ or
-$x\_(1,2) = (-b pm sqrt Delta)(2a)$, or display equations as this one :
+$x\_(1,2) = (-b pm sqrt Delta)/(2a)$, or display equations as this one :
 $$J\_(alpha)(x) = sum\_(m=0)^(oo) ((-1)^m)/(m! Gamma(m + alpha + 1) (x/2)^(2 m + alpha)$$
 
 **It fails**, even though I asked in the configuration of MathJax to accept dollars...
@@ -67,6 +67,15 @@ The previous equation is simply included in the Markdown code part as some basic
 4 sum_(n=1)^(+oo) rho_n^2 sin^2(nh) = 1/(2pi) int_(-pi)^(pi) | f(x+h) - f(x-h)|^2 dx.
 \`\`\`
 ```
+
+### Last examples
+
+From the [GitHub issue #9](https://github.com/Naereen/StrapDown.js/issues/9)
+
+- \`@(1/2[1-(1/2)^n])/(1-(1/2))=s_n@\`
+- \`oint_Cx^3 dx+4y^2 dy\`
+- \`2=(((3-x)xx2)/(3-x))\`
+- \`sum_(m=1)^oosum_(n=1)^oo(m^2 n)/(3^m(m3^n+n3^m)\`
 
 ***
 
