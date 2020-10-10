@@ -6,31 +6,66 @@
 </ul>
 
 ## This short example supports [MathJax](http://www.mathjax.org/) using [ASCIIMath](http://asciimath.org/) syntax.
+See this [issue #9](https://GitHub.com/Naereen/StrapDown.js/issues/9) on the GitHub page of StrapDown.js.
 
-<p style="font-size:x-large;">
-Inline equations, as for instance the classic `\Delta = b^2-4ac` and
+### 1st try: using backticks with no escape:
+
+Inline equations, as for instance the classic `Delta = b^2-4ac` and
 `x_(1,2) = (-b pm sqrt Delta)(2a)`, or display equations as this one :
-	$$ J\_\alpha(x) = \sum\limits\_{m=0}^\infty \frac{(-1)^m}{m! \, \Gamma(m + \alpha + 1)}{\left({\frac{x}{2}}\right)}^{2 m + \alpha} $$
-</p>
+$$ J_(alpha)(x) = sum_(m=0)^(oo) ((-1)^m)/(m! Gamma(m + alpha + 1) (x/2)^(2 m + alpha) $$
 
-Also using dollar sign as delimiter:
-$\Delta^2 - 4ac$
-$x_(1,2) = (-b pm sqrt Delta)(2a)$, or display equations as this one :
-	$$ J\_\alpha(x) = \sum\limits\_{m=0}^\infty \frac{(-1)^m}{m! \, \Gamma(m + \alpha + 1)}{\left({\frac{x}{2}}\right)}^{2 m + \alpha} $$
+**It fails**, as backticks are first interpreted as Markdown code for inline code, and the Markdown parser of StrapDown.js converts to HTML *before* MathJax loads in and can try to convert the code to maths.
 
-## From a classic math book
+
+### 2nd try: using backticks with escape (it works):
+
+Inline equations, as for instance the classic \`Delta = b^2-4ac\` and
+\`x\_(1,2) = (-b pm sqrt Delta)(2a)\`, or display equations as this one :
+
+```AsciiMath
+J\_(alpha)(x) = sum\_(m=0)^(oo) ((-1)^m)/(m! Gamma(m + alpha + 1) (x/2)^(2 m + alpha)
+```
+
+Inline equations **work** but display equations **do not work**.
+
+
+### Also using dollar sign as delimiter?
+
+Let's see: $\Delta^2 - 4ac$ or
+$x\_(1,2) = (-b pm sqrt Delta)(2a)$, or display equations as this one :
+$$J\_(alpha)(x) = sum\_(m=0)^(oo) ((-1)^m)/(m! Gamma(m + alpha + 1) (x/2)^(2 m + alpha)$$
+
+**It fails**, even though I asked in the configuration of MathJax to accept dollars...
+
+### Another example from a classic math book
+
 But a less classic exercise about [Hölder functions](https://en.wikipedia.org/wiki/H%C3%B6lder_condition)
-(more precisely, *Exercice 7*, Chapter 4.5, page 267, of the [Gourdon, "*Les maths en tête : Analyse*", $2^\text{nd}$ edition](http://www.amazon.fr/gp/product/2729837590) book).
+(more precisely, *Exercice 7*, Chapter 4.5, page 267, of the [Gourdon, "*Les maths en tête : Analyse*", \`2^(nd)\` edition](http://www.amazon.fr/gp/product/2729837590) book).
 
-<p style="font-size:x-large;">
-$$ 4 \sum\_{n=1}^{+\infty} \rho\_n^2 \sin^2 nh = \frac{1}{2\pi} \int\_{-\pi}^{\pi}\lvert f(x+h) - f(x-h)\rvert^2 dx. $$
-</p>
+#### Inline equation: OKAY
 
-## How-to ?
-The previous equation is simply included in the Markdown code part as basic some $\LaTeX2e{}$ code :
+\`4 sum\_(n=1)^(+oo) rho\_n^2 sin^2(nh) = 1/(2pi) int\_(-pi)^(pi) | f(x+h) - f(x-h)|^2 dx.\`
+
+How-to?
+The previous equation is simply included in the Markdown code part as some basic inline AsciiMath code (with escaped backticks):
+
+> ```markdown
+\`4 sum\_(n=1)^(+oo) rho\_n^2 sin^2(nh) = 1/(2pi) int\_(-pi)^(pi) | f(x+h) - f(x-h)|^2 dx.\`
+```
+
+#### Display equation: not OKAY (yet?)
+
+```AsciiMath
+4 sum\_(n=1)^(+oo) rho\_n^2 sin^2(nh) = 1/(2pi) int\_(-pi)^(pi) | f(x+h) - f(x-h)|^2 dx.
+```
+
+How-to? (it fails)
+The previous equation is simply included in the Markdown code part as some basic AsciiMath code (with three escaped backticks then AsciiMath ... then three escaped backticks):
 
 > ```latex
-$$ 4 \sum\_{n=1}^{+\infty} \rho\_n^2 \sin^2 nh = \frac{1}{2\pi} \int\_{-\pi}^{\pi}|f(x+h) - f(x-h)|^2 dx. $$
+\̀ \`\`AsciiMath
+4 sum_(n=1)^(+oo) rho_n^2 sin^2(nh) = 1/(2pi) int_(-pi)^(pi) | f(x+h) - f(x-h)|^2 dx.
+\`\`\`
 ```
 
 ***
@@ -42,6 +77,12 @@ from the bottom of a *StrapDown*-flavored page, for instance from the default *C
 > ```html
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=AM_CHTML"></script>
 ```
+
+I also tried to add another line after, to be safe:
+> ```html
+<script type="text/javascript">window.MathJax = { loader: { load: ['input/asciimath'] }, asciimath: { delimiters: [['$','$'], ['`','`']] } });</script>
+```
+but it does not change anything, so it's not mandatory (inline AsciiMath with escaped backticks works without this line, and all the other possibilities do not work, with or without this line).
 
 You can consult [a second example](example4.html) to see some more advanced examples of LaTeX equations rendered with MathJax.
 
@@ -62,7 +103,5 @@ You can consult [a second example](example4.html) to see some more advanced exam
 </xmp>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=AM_CHTML&amp;locale=fr"></script>
 <script type="text/javascript" src="strapdown.min.js"></script>
-<script type="text/javascript">
-window.MathJax = { loader: { load: ['input/asciimath'] }, asciimath: { delimiters: [['$','$'], ['`','`']] } });
-</script>
+<script type="text/javascript">window.MathJax = { loader: { load: ['input/asciimath'] }, asciimath: { delimiters: [['$','$'], ['`','`']] } });</script>
 </body></html>
