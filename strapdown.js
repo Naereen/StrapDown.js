@@ -420,6 +420,11 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   linkEl.href = originBase + '/strapdown.min.css';
   document.head.appendChild(linkEl);
 
+  var linkEl = document.createElement('link');
+  linkEl.rel = 'stylesheet';
+  linkEl.href = originBase + '/themes/bootstrap-responsive.min.css';
+  document.head.appendChild(linkEl);
+
   // Favicon (730 bytes for 'favicon.png')
   if (queryOrigin['keepicon']) {
     // Do not add a favicon, if strapdown.js was loaded with a URL query containing "&keepicon=y" somewhere.
